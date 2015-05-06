@@ -82,17 +82,21 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Simone\Documents\Visual Studio 2013\Projects\AIProgramming\SFML-2.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Mattia\Master\SourceTree\AI-Project\SFML-2.2\include;D:\Mattia\Master\SourceTree\AI-Project\SFML-2.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>sfml-system.lib;sfml-network.lib;sfml-audio.lib;sfml-window.lib;sfml-graphics.lib</AdditionalDependencies>
       <TargetMachine>MachineX86</TargetMachine>
 <<<<<<< HEAD
+      <AdditionalLibraryDirectories>D:\Mattia\Master\SourceTree\AI-Project\SFML-2.2\lib;D:\Mattia\Master\SourceTree\AI-Project\SFML-2.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+=======
+<<<<<<< HEAD
       <AdditionalLibraryDirectories>D:\Documenti\Master Game\IA\GIT-Project\SFML-2.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 =======
       <AdditionalLibraryDirectories>C:\Users\Simone\Documents\Visual Studio 2013\Projects\AIProgect\SFML-2.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 >>>>>>> 34b5da8bd0078a1ae9177fcc195eb654d645f196
+>>>>>>> 75c8efe2055a02c38c37a49ddb2ad19269e72cbe
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -116,7 +120,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Simone\Documents\Visual Studio 2013\Projects\AIProgramming\SFML-2.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Mattia\Master\SourceTree\AI-Project\SFML-2.2\include;C:\Users\Simone\Documents\Visual Studio 2013\Projects\AIProgramming\SFML-2.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -124,10 +128,14 @@
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>sfml-system.lib;sfml-network.lib;sfml-audio.lib;sfml-window.lib;sfml-graphics.lib</AdditionalDependencies>
 <<<<<<< HEAD
+      <AdditionalLibraryDirectories>D:\Mattia\Master\SourceTree\AI-Project\SFML-2.2\lib;C:\Users\Simone\Documents\Visual Studio 2013\Projects\AIProgramming\SFML-2.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+=======
+<<<<<<< HEAD
       <AdditionalLibraryDirectories>D:\Documenti\Master Game\IA\GIT-Project\SFML-2.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 =======
       <AdditionalLibraryDirectories>C:\Users\Simone\Documents\Visual Studio 2013\Projects\AIProgect\SFML-2.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 >>>>>>> 34b5da8bd0078a1ae9177fcc195eb654d645f196
+>>>>>>> 75c8efe2055a02c38c37a49ddb2ad19269e72cbe
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

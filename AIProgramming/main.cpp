@@ -1,8 +1,13 @@
 #include <iostream>
 #include "AStar.h"
+<<<<<<< HEAD
+
+#include <SFML/Graphics.hpp>
+=======
 /*
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>*/
+>>>>>>> 75c8efe2055a02c38c37a49ddb2ad19269e72cbe
 
 int main(int argc, const char * argv[])
 {

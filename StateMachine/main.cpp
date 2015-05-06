@@ -1,10 +1,17 @@
 #include "Miner.h"
+#include "Graphic.h"
 
 int main() {
+
 	Miner bob;
+	Graphic gra;
+	gra.Initialize();
+
 	while (true){
 		bob.Update();
-		getchar();
+		gra.Draw(bob.getLocation());
 	}
+
 	return 0;
 }
+

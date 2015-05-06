@@ -24,5 +24,9 @@ void Mining::Execute(Miner* miner){
 
 void Mining::Exit(Miner* miner){
 	std::cout << "Leaving MINE" << std::endl;
+<<<<<<< HEAD
+}
+=======
 }
 
+>>>>>>> 75c8efe2055a02c38c37a49ddb2ad19269e72cbe

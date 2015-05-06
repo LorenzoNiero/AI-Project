@@ -17,12 +17,16 @@ void Idle::Enter(Miner* miner){
 void Idle::Execute(Miner* miner){
 	miner->increaseStamina();
 	std::cout << miner->getStamina() << std::endl;
-	if (miner->getStamina() >= 100) { 
+	if (miner->getStamina() >= 5000) { 
 		miner->getStateMachine()->ChangeState((State<Miner>*)&Walk::getWInstance());
 	}
 }
 
 void Idle::Exit(Miner* miner){
 	std::cout << "Leaving HOME" << std::endl;
+<<<<<<< HEAD
+}
+=======
 }
 
+>>>>>>> 75c8efe2055a02c38c37a49ddb2ad19269e72cbe

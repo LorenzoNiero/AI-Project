@@ -14,7 +14,9 @@ public:
 		m_pCurrentState(nullptr),
 		m_pPreviousState(nullptr),
 		m_pCurrentAgent(agent)
-	{}
+	{};
+
+	virtual ~MinerStateMachine() {};
 
 	void SetCurrentState(State<Miner>* s){ m_pCurrentState = s; }
 	State<Miner>*  GetCurrentState()  const{ return m_pCurrentState; }
@@ -28,6 +30,6 @@ public:
 
 	void  RevertToPreviousState(){ ChangeState(m_pPreviousState); }
 
-	bool  isInState(const State<Miner>& st) const;
+	bool  isInState(const State<Miner>& st) const { return true; };
 
 };

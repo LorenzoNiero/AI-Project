@@ -1,7 +1,6 @@
 #include <iostream>
 #include "AStar.h"
 
-#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 
 int main(int argc, const char * argv[])

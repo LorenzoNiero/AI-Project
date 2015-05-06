@@ -10,7 +10,7 @@ private:
 
 public:
 	static State<Miner>& getWInstance();
-	~Walk();
+	~Walk() {};
 
 private :
 	Walk(){};

@@ -30,5 +30,3 @@ void Walk::Execute(Miner* miner){
 void Walk::Exit(Miner* miner){
 	std::cout << "WALKING END" << std::endl;
 }
-
-Walk::~Walk(){ }

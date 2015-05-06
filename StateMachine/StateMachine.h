@@ -5,7 +5,7 @@ template <class Agent>
 class StateMachine {
 
 public:
-	virtual ~StateMachine() = 0;
+	virtual ~StateMachine() {};
 	virtual void SetCurrentState(State<Agent>* s) = 0;
 	virtual State<Agent>* GetCurrentState() const = 0;
 

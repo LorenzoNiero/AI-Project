@@ -16,7 +16,7 @@ void Mining::Enter(Miner* miner){
 
 void Mining::Execute(Miner* miner){
 	miner->decreaseStamina();
-	miner->decreaseStamina();
+	std::cout << miner->getStamina() << std::endl;
 	if (miner->getStamina() == 0) {
 		miner->getStateMachine()->ChangeState((State<Miner>*)&Walk::getWInstance());
 	}
@@ -26,4 +26,3 @@ void Mining::Exit(Miner* miner){
 	std::cout << "Leaving MINE" << std::endl;
 }
 
-Mining::~Mining(){ }

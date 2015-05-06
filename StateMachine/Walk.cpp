@@ -16,11 +16,12 @@ void Walk::Enter(Miner* miner){
 
 void Walk::Execute(Miner* miner){
 	miner->decreaseKlm();
+	std::cout << miner->getKlm() << std::endl;
 	if (miner->getKlm() == 0) {
 		switch (miner->getLocation())
 		{
-		case home: miner->getStateMachine()->ChangeState(&Mining::getMInstance());
-		case mine: miner->getStateMachine()->ChangeState(&Idle::getIInstance());
+		case home: miner->getStateMachine()->ChangeState(&Mining::getMInstance()); break;
+		case mine: miner->getStateMachine()->ChangeState(&Idle::getIInstance()); break;
 		default:
 			break;
 		}
@@ -31,4 +32,3 @@ void Walk::Exit(Miner* miner){
 	std::cout << "WALKING END" << std::endl;
 }
 
-Walk::~Walk(){ }

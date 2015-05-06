@@ -4,7 +4,7 @@
 #include "Walk.h"
 
 class Miner;
-class Idle : State<Miner> {
+class Idle : State<Miner>{
 
 private:
 	static Idle* m_pIInstance;

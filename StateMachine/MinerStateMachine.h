@@ -14,8 +14,12 @@ public:
 		m_pCurrentState(nullptr),
 		m_pPreviousState(nullptr),
 		m_pCurrentAgent(agent)
+<<<<<<< HEAD
 	{};
 
+=======
+	{}
+>>>>>>> 75c8efe2055a02c38c37a49ddb2ad19269e72cbe
 	virtual ~MinerStateMachine() {};
 
 	void SetCurrentState(State<Miner>* s){ m_pCurrentState = s; }

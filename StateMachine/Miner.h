@@ -26,12 +26,16 @@ public:
 	int getStamina() { return m_istamina; };
 	location_type getLocation() { return m_eLocation; };
 	void setLocation(location_type newLocation) { m_eLocation = newLocation; };
+
+	location_type getFromLocation() { return m_efromLocation; };
+	void setFromLocation(location_type newLocation) { m_efromLocation = newLocation; };
+
 	int getKlm() { return m_iklm; }
-	void resetKlm() { m_iklm = 100; }
+	void resetKlm() { m_iklm = 10000; }
 
 private:
 	MinerStateMachine* m_pMinerStateMachine;
-	location_type m_eLocation;
+	location_type m_eLocation,m_efromLocation;
 	int m_istamina;
 	int m_iklm;
 };

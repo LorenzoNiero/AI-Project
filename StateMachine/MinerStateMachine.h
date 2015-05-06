@@ -29,10 +29,6 @@ public:
 
 	void  RevertToPreviousState(){ ChangeState(m_pPreviousState); }
 
-<<<<<<< HEAD
 	bool  isInState(const State<Miner>& st) const{ return true; };
-=======
-	bool  isInState(const State<Miner>& st) const { return true; };
->>>>>>> 34b5da8bd0078a1ae9177fcc195eb654d645f196
 
 };

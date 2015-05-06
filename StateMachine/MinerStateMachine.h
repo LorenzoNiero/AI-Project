@@ -28,6 +28,6 @@ public:
 
 	void  RevertToPreviousState(){ ChangeState(m_pPreviousState); }
 
-	bool  isInState(const State<Miner>& st) const;
+	bool  isInState(const State<Miner>& st) const{ return true; };
 
 };

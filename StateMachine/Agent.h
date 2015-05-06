@@ -3,6 +3,6 @@
 
 class Agent {
 public:
-	virtual ~Agent() = 0;
+	virtual ~Agent() {};
 	virtual void Update() = 0;
 };

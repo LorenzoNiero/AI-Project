@@ -15,7 +15,7 @@ public:
 
 private:
 	Idle() {};
-	
+
 public:
 	void Enter(Miner*);
 	void Execute(Miner*);

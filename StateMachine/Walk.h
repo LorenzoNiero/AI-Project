@@ -14,7 +14,7 @@ public:
 
 private :
 	Walk(){};
-	
+
 public:
 	void Enter(Miner*);
 	void Execute(Miner*);

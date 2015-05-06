@@ -14,7 +14,7 @@ public:
 
 private:
 	Mining(){};
-	
+
 public:
 	void Enter(Miner*);
 	void Execute(Miner*);

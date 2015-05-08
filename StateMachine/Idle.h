@@ -11,7 +11,7 @@ private:
 
 public:
 	static State<Miner>& getIInstance();
-	~Idle(){};
+	~Idle() {};
 
 private:
 	Idle() {};

@@ -5,7 +5,9 @@ template <class T>
 class StateMachine {
 
 public:
+
 	virtual ~StateMachine() {};
+
 	virtual void SetCurrentState(State<T>* s) = 0;
 	virtual State<T>* GetCurrentState() const = 0;
 

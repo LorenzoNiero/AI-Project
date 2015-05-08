@@ -10,7 +10,7 @@ private:
 
 public:
 	static State<Miner>& getMInstance();
-	~Mining(){};
+	~Mining() {};
 
 private:
 	Mining(){};

@@ -86,7 +86,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>sfml-system.lib;sfml-network.lib;sfml-audio.lib;sfml-window.lib;sfml-graphics.lib</AdditionalDependencies>
+      <AdditionalDependencies>sfml-system-d.lib;sfml-network-d.lib;sfml-audio-d.lib;sfml-window-d.lib;sfml-graphics-d.lib</AdditionalDependencies>
       <TargetMachine>MachineX86</TargetMachine>
       <AdditionalLibraryDirectories>D:\Documenti\Master Game\IA\GIT-Project\SFML-2.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalLibraryDirectories>$(SolutionDir)SFML-2.2\lib</AdditionalLibraryDirectories>

@@ -53,7 +53,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>sfml-system.lib;sfml-network.lib;sfml-audio.lib;sfml-window.lib;sfml-graphics.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-system-d.lib;sfml-network-d.lib;sfml-audio-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)SFML-2.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -99,6 +99,10 @@
     <Font Include="Fonts\arialbd.ttf" />
     <Font Include="Fonts\arialbi.ttf" />
     <Font Include="Fonts\ariali.ttf" />
+    <Font Include="Fonts\ARIALN.TTF" />
+    <Font Include="Fonts\ARIALNB.TTF" />
+    <Font Include="Fonts\ARIALNBI.TTF" />
+    <Font Include="Fonts\ARIALNI.TTF" />
     <Font Include="Fonts\ariblk.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,7 +1,8 @@
 #include "Graphic.h"
 
 void Graphic::Initialize() {
-	/*if (!font.loadFromFile("Fonts/arial.ttf"))
+	
+	if (!font.loadFromFile("Fonts/arial.ttf"))
 	{
 		std::cout << "ERROR: Font Not Found!";
 	}
@@ -11,7 +12,8 @@ void Graphic::Initialize() {
 		textWalk.setFont(font);
 		textMining.setFont(font);
 		textCurrentState.setFont(font);
-	}*/
+	}
+
 	textIdle.setString("Miner in Idle");
 	textIdle.setCharacterSize(24);
 	textIdle.setColor(color.White);
@@ -57,10 +59,10 @@ void Graphic::Draw(location_type location) {
 	}
 
 	switch (location){
-	case home: circleCurrentState.setFillColor(color.Green); break;
-	case walking: circleCurrentState.setFillColor(color.Yellow); break;
-	case mine: circleCurrentState.setFillColor(color.Red); break;
-	default: circleCurrentState.setFillColor(color.White); break;
+		case home: circleCurrentState.setFillColor(color.Green); break;
+		case walking: circleCurrentState.setFillColor(color.Yellow); break;
+		case mine: circleCurrentState.setFillColor(color.Red); break;
+		default: circleCurrentState.setFillColor(color.White); break;
 	}
 			
 	window.clear();

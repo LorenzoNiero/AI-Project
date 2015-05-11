@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AStar", "AIProgramming\AIPr
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StateMachine", "StateMachine\StateMachine.vcxproj", "{FB0584F9-FB69-44ED-8D2F-2629704E0FBE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AISandBox", "AISandBox\AISandBox.vcxproj", "{DA093C37-FDD9-47A2-BA4B-6F17935B73D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -29,6 +31,12 @@ Global
 		{FB0584F9-FB69-44ED-8D2F-2629704E0FBE}.Release|Win32.ActiveCfg = Release|Win32
 		{FB0584F9-FB69-44ED-8D2F-2629704E0FBE}.Release|Win32.Build.0 = Release|Win32
 		{FB0584F9-FB69-44ED-8D2F-2629704E0FBE}.Release|x64.ActiveCfg = Release|Win32
+		{DA093C37-FDD9-47A2-BA4B-6F17935B73D4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DA093C37-FDD9-47A2-BA4B-6F17935B73D4}.Debug|Win32.Build.0 = Debug|Win32
+		{DA093C37-FDD9-47A2-BA4B-6F17935B73D4}.Debug|x64.ActiveCfg = Debug|Win32
+		{DA093C37-FDD9-47A2-BA4B-6F17935B73D4}.Release|Win32.ActiveCfg = Release|Win32
+		{DA093C37-FDD9-47A2-BA4B-6F17935B73D4}.Release|Win32.Build.0 = Release|Win32
+		{DA093C37-FDD9-47A2-BA4B-6F17935B73D4}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

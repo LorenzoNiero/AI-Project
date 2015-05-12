@@ -30,6 +30,9 @@
     <ClInclude Include="Node.h" />
     <ClInclude Include="NodeState.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Sprites\15.png" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9B843E1E-1C11-4FBD-8E7F-B68DC111E9DA}</ProjectGuid>
     <RootNamespace>AIProgramming</RootNamespace>

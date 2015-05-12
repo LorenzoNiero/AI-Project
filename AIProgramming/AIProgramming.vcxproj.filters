@@ -39,4 +39,9 @@
       <UniqueIdentifier>{b11b9fef-00e4-4c38-83a2-6865e0e9640f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Sprites\15.png">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

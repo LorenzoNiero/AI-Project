@@ -13,8 +13,7 @@ int main(int argc, const char * argv[])
 	algorithm.Run(result);
 
 	Graphic graphic;
-	graphic.Initialize(result);
-	
+	graphic.Initialize(result);	
 	graphic.Draw(result);
 
 	return 0;

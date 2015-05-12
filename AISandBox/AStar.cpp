@@ -3,6 +3,24 @@
 
 #include "AStar.h"
 
+void AStar::Init()
+{
+	CreateGraph();
+
+	CreateGraphAdjs();
+
+	ComputeGraphHeuristics();
+
+	AddNodeToOpenList(NULL, tRoot[iStartNode]);
+	
+}
+
+void AStar::Finish()
+{
+	Clean();
+
+}
+
 void AStar::Run()
 {
     CreateGraph();
@@ -14,6 +32,12 @@ void AStar::Run()
     Search();
     
     Clean();
+}
+
+Node* AStar::getNodes(int i) const
+{
+
+	return tRoot[i];
 }
 
 void AStar::CreateGraph()
@@ -124,6 +148,28 @@ void AStar::Search()
     }
 }
 
+/*
+ritorna vero se ha finito la ricerca
+*/
+bool AStar::SearchStep()
+{
+	Node* pCurrentNode = NULL;
+
+	if (!qOpenList.empty()){
+
+		pCurrentNode = VisitNode();
+
+		if (pCurrentNode == tRoot[iEndNode])
+		{
+			PrintPath(pCurrentNode);
+
+		}
+	}
+	
+	return qOpenList.empty();
+
+}
+
 Node* AStar::VisitNode()
 {
     Node* pCurrentNode = qOpenList.front();
@@ -226,11 +272,13 @@ void AStar::PrintPath(Node* pNode) const
     std::list<Node*>::iterator iEnd(lPath.end());
     for (std::list<Node*>::iterator iter = lPath.begin(); iter != iEnd; ++iter)
     {
+		(*iter)->eState = NodeState::Finish;
         std::cout << "(" << (*iter)->X() << "," << (*iter)->Y() << ")";
     }
     
     std::cout << "\n\n\n";
 }
+
 
 
 

@@ -8,6 +8,7 @@
 #include <time.h>
 #include <sstream>
 #include <SFML\Graphics.hpp>
+#include "AStar.h"
 
 using namespace sf;
 
@@ -28,10 +29,9 @@ public:
 	void setTilePosition(std::vector<RectangleShape> &sprites);
 
 private:
-	sf::Texture texture;
-	std::vector<sf::RectangleShape> sprites;
-	RectangleShape rect;
-	//sf::Sprite sprite;
+	
+	std::vector<sf::RectangleShape> sprites;	
+	AStar alg;
 	
 
 };

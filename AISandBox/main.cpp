@@ -5,7 +5,7 @@ int main(int, char const**)
 {
 	Application* game = Application::Istance();
 	
-	game->Init();
+	game->Init(false);
 	
 	game->Run();
 	

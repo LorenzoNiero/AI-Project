@@ -15,7 +15,10 @@ void Application::Init(bool /*fullscreen*/)
 	mode.height = 600;
 	mode.bitsPerPixel = 32;
 
-	m_window = new sf::RenderWindow(mode,
+	//use this for fullscreen
+	//sf::VideoMode::getFullscreenModes()
+
+	m_window = new sf::RenderWindow(mode ,
 		"AI Sandbox",
 		sf::Style::Titlebar || sf::Style::Close);
 

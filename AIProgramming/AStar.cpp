@@ -6,8 +6,8 @@
 
 void AStar::Setup()
 {
-	//int startConfig[16] = { 2, 5, 3, 4, 1, 10, 6, 8, 9, 14, 7, 11, 13, 16, 15, 12 };
-	int startConfig[16] = { 5,14,13,6,3,11,15,2,1,10,8,4,12,7,9,16 };
+	int startConfig[16] = { 2, 5, 3, 4, 1, 10, 6, 8, 9, 14, 7, 11, 13, 16, 15, 12 };
+	//int startConfig[16] = { 5,14,13,6,3,11,15,2,1,10,8,4,12,7,9,16 };
 
 	int endConfig[16] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 };
 	int adjNodeConfiguration[16] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -24,11 +24,11 @@ void AStar::Setup()
 	iEndNode->setConfiguration(endConfig);
 }
 
-void AStar::Run()
+void AStar::Run(vector<Node> &result)
 {
 	CreateGraph();
 
-	Search();
+	Search(result);
 
 	//Clean();
 }
@@ -126,7 +126,7 @@ void AStar::ComputeNodeHeuristic(Node* currentNode)
 	}
 }
 
-void AStar::Search()
+void AStar::Search(vector<Node> &result)
 {
 	AddNodeToOpenList(NULL, tRoot.front());
 	Node* pCurrentNode = NULL;
@@ -139,6 +139,11 @@ void AStar::Search()
 			PrintPath(pCurrentNode);
 			break;
 		}
+	}
+	while (pCurrentNode != NULL)
+	{
+		result.push_back(*pCurrentNode);
+		pCurrentNode = pCurrentNode->pParent;
 	}
 }
 

@@ -4,11 +4,13 @@
 #include <iostream>
 #include <list>
 #include "Node.h"
+#include <vector>
+
 
 class AStar
 {
 public:
-	void Run();
+	void Run(vector<Node> &result);
 	void Setup();
 
 private:	
@@ -22,7 +24,7 @@ private:
 
 	void Clean();
 
-	void Search();
+	void Search(vector<Node> &result);
 	Node* VisitNode();
 	void AddNodeToOpenList(Node* pParent, Node* pNode);
 

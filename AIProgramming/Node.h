@@ -12,10 +12,12 @@ public:
 
 	Node();
 	bool operator==(const Node& other) const;
-	bool operator!=(const Node &other) const;
+	bool operator!=(const Node& other) const;
 
 	void setConfiguration(int config[]);
 	int* getConfiguration();
+	int getConfigurationIndexed(int index) { return configuration[index]; };
+
 
 	friend ostream& operator<<(ostream& out, const Node* a);
 

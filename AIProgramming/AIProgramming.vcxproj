@@ -20,11 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AStar.cpp" />
+    <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Node.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AStar.h" />
+    <ClInclude Include="Graphics.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="NodeState.h" />
   </ItemGroup>

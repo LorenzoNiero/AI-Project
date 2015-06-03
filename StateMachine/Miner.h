@@ -5,6 +5,7 @@
 #include "Idle.h"
 #include "Walk.h"
 #include "Mining.h"
+#include "Vector2.h"
 
 enum location_type{
 	home,
@@ -32,10 +33,11 @@ public:
 
 	int getKlm() { return m_iklm; }
 	void resetKlm() { m_iklm = 10000; }
-
+	
 private:
 	MinerStateMachine* m_pMinerStateMachine;
 	location_type m_eLocation,m_efromLocation;
 	int m_istamina;
 	int m_iklm;
+	
 };

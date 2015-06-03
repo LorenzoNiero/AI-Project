@@ -9,9 +9,11 @@ void SteeringBehaviors::SumForces()
 {
 }
 
+
 Vector2 SteeringBehaviors::Seek(const Vector2& target)
 {
-	int d= target - m_agent->
+	//int d= target - m_agent->
+	Vector2 distance = target - m_agent->getPosition();
 }
 
 Vector2 SteeringBehaviors::Flee(const Vector2& target)

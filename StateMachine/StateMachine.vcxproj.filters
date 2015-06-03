@@ -22,6 +22,12 @@
     <ClCompile Include="Walk.cpp">
       <Filter>Cpp File</Filter>
     </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Cpp File</Filter>
+    </ClCompile>
+    <ClCompile Include="SteeringBehaviours.cpp">
+      <Filter>Cpp File</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h">
@@ -49,6 +55,12 @@
       <Filter>Header File</Filter>
     </ClInclude>
     <ClInclude Include="Walk.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="SteeringBehaviors.h">
       <Filter>Header File</Filter>
     </ClInclude>
   </ItemGroup>

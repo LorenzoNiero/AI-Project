@@ -81,6 +81,8 @@
     <ClCompile Include="Miner.cpp" />
     <ClCompile Include="MinerStateMachine.cpp" />
     <ClCompile Include="Mining.cpp" />
+    <ClCompile Include="SteeringBehaviours.cpp" />
+    <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Walk.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +94,8 @@
     <ClInclude Include="Mining.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateMachine.h" />
+    <ClInclude Include="SteeringBehaviors.h" />
+    <ClInclude Include="Vector2.h" />
     <ClInclude Include="Walk.h" />
   </ItemGroup>
   <ItemGroup>

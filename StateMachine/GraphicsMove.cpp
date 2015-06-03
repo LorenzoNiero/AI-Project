@@ -9,11 +9,14 @@ void GraphicsMove::Initialize() {
 	circleHome.setFillColor(color.Yellow);
 	circleHome.setPosition(positionMine.x, positionMine.y);
 
+	minerCircle.setRadius(20.f);
+	minerCircle.setFillColor(color.Yellow);
+	minerCircle.setPosition(0, 0);
 
 	window.create(sf::VideoMode(800, 600), "FSM Miner at Work!");
 }
 
-void GraphicsMove::Draw() {
+void GraphicsMove::Draw(Miner miner) {
 
 	sf::Event event;
 	while (window.pollEvent(event))
@@ -40,14 +43,14 @@ void GraphicsMove::Draw() {
 	window.draw(textCurrentState);
 	window.draw(circleCurrentState);*/
 
-	for (int i = 0; i < m_VectorCircle->size(); i++) {
-		Vector2 position = m_VectorAgent->at(i)->getPosition();
-
-		m_VectorCircle->at(i)->setPosition(position.x, position.y);
-
+	/*for (int i = 0; i < m_VectorCircle->size(); i++) {
+		Vector2 position = m_VectorAgent->at(i).getPosition();
+		
 		window.draw(*(m_VectorCircle->at(i)));
-	}
+	}*/
+	minerCircle.setPosition(miner.getPosition().x, miner.getPosition().y);
 
+	window.draw(minerCircle);
 	window.display();
 
 }

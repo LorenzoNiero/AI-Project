@@ -16,7 +16,7 @@ int main() {
 	while (true){
 		bob->Update();
 		gra.Draw(bob->getLocation());
-		graMove.Draw();
+		graMove.Draw(*bob);
 
 		
 		//graMove.Draw(bob.getLocation());

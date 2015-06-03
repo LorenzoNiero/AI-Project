@@ -63,6 +63,9 @@
     <ClInclude Include="SteeringBehaviors.h">
       <Filter>Header File</Filter>
     </ClInclude>
+    <ClInclude Include="WorldPosition.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Fonts">

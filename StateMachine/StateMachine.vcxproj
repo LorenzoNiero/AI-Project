@@ -75,7 +75,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Agent.cpp" />
     <ClCompile Include="Graphic.cpp" />
+    <ClCompile Include="GraphicsMove.cpp" />
     <ClCompile Include="Idle.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Miner.cpp" />
@@ -88,6 +90,7 @@
   <ItemGroup>
     <ClInclude Include="Agent.h" />
     <ClInclude Include="Graphic.h" />
+    <ClInclude Include="GraphicsMove.h" />
     <ClInclude Include="Idle.h" />
     <ClInclude Include="Miner.h" />
     <ClInclude Include="MinerStateMachine.h" />
@@ -97,6 +100,7 @@
     <ClInclude Include="SteeringBehaviors.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Walk.h" />
+    <ClInclude Include="WorldPosition.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Fonts\arial.ttf" />

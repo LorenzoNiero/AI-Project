@@ -7,13 +7,17 @@
 #include "Mining.h"
 #include "Vector2.h"
 
+
+const Vector2 positionMine(750, 50);
+const Vector2 positionHome(50, 50);
+
 enum location_type{
 	home,
 	walking,
 	mine
 };
 class MinerStateMachine;
-class Miner : Agent {
+class Miner : public Agent {
 public:
 	Miner();
 	~Miner(){ delete m_pMinerStateMachine;	};

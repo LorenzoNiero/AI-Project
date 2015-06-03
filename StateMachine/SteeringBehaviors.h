@@ -14,9 +14,8 @@ class SteeringBehaviors
 {
 
 public:
-	SteeringBehaviors(Agent* bp) :
-		m_agent(bp)
-	{};
+	SteeringBehaviors(Agent* bp) :	m_agent(bp)	{};
+
 	~SteeringBehaviors();
 
 	Vector2 GetTarget()const{ return m_target; }

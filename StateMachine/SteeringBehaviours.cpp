@@ -37,7 +37,23 @@ Vector2 SteeringBehaviors::Flee(const Vector2& target)
 
 Vector2 SteeringBehaviors::Arrive(const Vector2& target)
 {
+	Vector2 desiredVelocity, force;
+	desiredVelocity = target - m_agent->getPosition();
+	float d = desiredVelocity.Length();
+	desiredVelocity.Normalize();
 
+	if (d < 100) 
+	{
+		float m = d/100;
+		desiredVelocity *= m;
+	}
+	else 
+	{
+		desiredVelocity *= m_agent->getMaxVelocity();
+	}
+	force = desiredVelocity - m_agent->getVelocity();
+	
+	return force;
 }
 
 Vector2 SteeringBehaviors::Pursuit(const Agent* target)

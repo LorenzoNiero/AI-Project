@@ -5,8 +5,8 @@
 class Agent {
 public:
 	virtual ~Agent() {};
-	virtual void Update() = 0;
-	
+	virtual void Update(){};
+
 	Vector2 getPosition() const { return m_vPosition; }
 	void setPosition(Vector2 val) { m_vPosition = val; }
 
@@ -25,9 +25,13 @@ public:
 	float getAngleChange() const { return m_fAngleChange; }
 	void setAngleChange(float val) { m_fAngleChange = val; }
 
+	Vector2 getAcceleration() const { return m_vAcceleration; }
+	void setAcceleration(Vector2 val) { m_vAcceleration = val; }
+
 private :
 	Vector2 m_vPosition;
 	Vector2 m_vVelocity;
+	Vector2 m_vAcceleration;
 	float m_fCircleDistance;
 	float m_fCircleRadius;
 	float m_fAngleChange;

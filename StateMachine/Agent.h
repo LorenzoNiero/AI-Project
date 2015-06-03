@@ -10,10 +10,14 @@ public:
 	Vector2 getPosition() const { return m_position; }
 	void setPosition(Vector2 val) { m_position = val; }
 
-	Vector2 Velocity() const { return m_velocity; }
-	void Velocity(Vector2 val) { m_velocity = val; }
+	float getMaxVelocity() const { return m_maxVelocity; }
+	void setMaxVelocity(float val) { m_maxVelocity = val; }
+
+	Vector2 getVelocity() const { return velocity; }
+	void setVelocity(Vector2 val) { velocity = val; }
 
 private :
 	Vector2 m_position;
-	Vector2 m_velocity;
+	Vector2 velocity;
+	float m_maxVelocity;
 };

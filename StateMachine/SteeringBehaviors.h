@@ -3,6 +3,7 @@
 
 #include "Vector2.h"
 #include <vector>
+#include "Agent.h"
 
 class Agent;
 class Place;

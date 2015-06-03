@@ -17,24 +17,16 @@ void SteeringBehaviors::SumForces()
 
 Vector2 SteeringBehaviors::Seek(const Vector2& target)
 {
-<<<<<<< HEAD
-	int d = target - m_agent->
-=======
-	m_target = target;
-
 	Vector2 distance, desiredVelocity, force;
 	distance = target - m_agent->getPosition();
 	desiredVelocity = distance.NormalizeCopy() * m_agent->getMaxVelocity();
 	force = desiredVelocity - m_agent->getVelocity();
 
 	return force;
->>>>>>> 9e40b5af7b68ea5657187faa579e0d6518c2569c
 }
 
 Vector2 SteeringBehaviors::Flee(const Vector2& target)
 {
-	m_target = target;
-
 	Vector2 distance, desiredVelocity, force;
 	distance = m_agent->getPosition() - target;
 	desiredVelocity = distance.NormalizeCopy() * m_agent->getMaxVelocity();
@@ -50,14 +42,56 @@ Vector2 SteeringBehaviors::Arrive(const Vector2& target)
 
 Vector2 SteeringBehaviors::Pursuit(const Agent* target)
 {
+	Vector2 distance, targetFuturePosition;
+	float T;
+
+	//distance = target->getPosition() - m_agent->getPosition();
+	distance = m_agent->getPosition();
+	distance.Distance(target->getPosition());
+
+	T = distance.Length() / target->getMaxVelocity();
+	targetFuturePosition = target->getPosition() + target->getVelocity() * T;
+
+	return Seek(targetFuturePosition);
 }
 
 Vector2 SteeringBehaviors::Evade(const Agent* target)
 {
+	Vector2 distance, targetFuturePosition;
+	float T;
+
+	//distance = target->getPosition() - m_agent->getPosition();
+	distance = m_agent->getPosition();
+	distance.Distance(target->getPosition());
+
+	T = distance.Length() / target->getMaxVelocity();
+	targetFuturePosition = target->getPosition() + target->getVelocity() * T;
+
+	return Flee(targetFuturePosition);
 }
 
 Vector2 SteeringBehaviors::Wander()
 {
+	Vector2 circleCenter, desiredVelocity, wanderForce;
+	Vector2 displacement = { 0, -1 };
+	float wanderAngle = 0;
+
+	circleCenter = m_agent->getVelocity();
+	desiredVelocity = circleCenter.NormalizeCopy() * m_agent->getCircleDistance();
+
+	desiredVelocity = displacement.NormalizeCopy() * m_agent->getCircleRadius();
+
+	//set angle, randomly change the vector direction by making it change its current angle
+	Vector2 pos;
+	pos.x = cos(wanderAngle) * displacement.Length();
+	pos.y = sin(wanderAngle) * displacement.Length();
+	m_agent->setPosition(pos);
+	
+	wanderAngle += rand() * m_agent->getAngleChange() - m_agent->getAngleChange() * 0.5f;
+
+	wanderForce = circleCenter + displacement;
+	
+	return wanderForce;
 }
 
 //TO DO: da non implementare

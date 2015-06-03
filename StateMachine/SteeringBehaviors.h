@@ -1,9 +1,11 @@
 #ifndef STEERINGBEHAVIORS_H
 #define STEERINGBEHAVIORS_H
 
-#include "Vector2.h"
 #include <vector>
+#include <time.h>
+#include <math.h> 
 #include "Agent.h"
+#include "Vector2.h"
 
 class Agent;
 class Place;

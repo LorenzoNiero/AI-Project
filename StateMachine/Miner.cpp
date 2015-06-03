@@ -6,6 +6,8 @@ Miner::Miner() {
 	m_pMinerStateMachine = new MinerStateMachine(this);
 	State<Miner>* m_pStartState = (State<Miner>*)&Idle::getIInstance();
 	m_pMinerStateMachine->SetCurrentState(m_pStartState);
+
+	
 }
 
 void Miner::Update()

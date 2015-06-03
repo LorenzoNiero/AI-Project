@@ -3,6 +3,7 @@
 
 #include "Vector2.h"
 #include <vector>
+#include "Agent.h"
 
 class Agent;
 class Place;
@@ -78,7 +79,7 @@ private:
 	std::vector<Place*>		m_obstacles;
 
 	Vector2			m_steering;
-	Vector2			m_target;
+	Vector2			m_target;  
 	
 	float			m_thetaValue;
 

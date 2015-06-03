@@ -18,8 +18,8 @@ public:
 	void SetTarget(const Vector2 target);
 	void SetEvader(Agent* evader);
 
-	void SetNeighbors(std::vector<Agent*> nNeighbors) { m_neighbors = nNeighbors; }
-	void SetObstacles(std::vector<Place*> nObstacles) { m_obstacles = nObstacles; }
+	//void SetNeighbors(std::vector<Agent*> nNeighbors) { m_neighbors = nNeighbors; }
+	//void SetObstacles(std::vector<Place*> nObstacles) { m_obstacles = nObstacles; }
 
 	
 	Vector2 GetForce()const { return m_steering; }
@@ -70,8 +70,8 @@ private:
 	
 	Agent*				m_agent;
 
-	std::vector<Agent*>		m_neighbors;
-	std::vector<Place*>		m_obstacles;
+	/*std::vector<Agent*>		m_neighbors;
+	std::vector<Place*>		m_obstacles;*/
 
 	Vector2			m_steering;
 	Vector2			m_target;

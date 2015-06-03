@@ -7,19 +7,45 @@ void SteeringBehaviors::Calculate()
 //sommare i comportamenti; evade, wander oppure seek, pursuit
 void SteeringBehaviors::SumForces()
 {
+
+	m_agent->setVelocity((m_agent->getVelocity() + desiredVelocity));
+	m_agent->getVelocity().Truncate(m_agent->getMaxVelocity());
+
+	m_agent->setPosition(m_agent->getPosition() + m_agent->getVelocity());
 }
+
 
 Vector2 SteeringBehaviors::Seek(const Vector2& target)
 {
+<<<<<<< HEAD
 	int d = target - m_agent->
+=======
+	m_target = target;
+
+	Vector2 distance, desiredVelocity, force;
+	distance = target - m_agent->getPosition();
+	desiredVelocity = distance.NormalizeCopy() * m_agent->getMaxVelocity();
+	force = desiredVelocity - m_agent->getVelocity();
+
+	return force;
+>>>>>>> 9e40b5af7b68ea5657187faa579e0d6518c2569c
 }
 
 Vector2 SteeringBehaviors::Flee(const Vector2& target)
 {
+	m_target = target;
+
+	Vector2 distance, desiredVelocity, force;
+	distance = m_agent->getPosition() - target;
+	desiredVelocity = distance.NormalizeCopy() * m_agent->getMaxVelocity();
+	force = desiredVelocity - m_agent->getVelocity();
+
+	return force;
 }
 
 Vector2 SteeringBehaviors::Arrive(const Vector2& target)
 {
+
 }
 
 Vector2 SteeringBehaviors::Pursuit(const Agent* target)

@@ -75,7 +75,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Agent.cpp" />
     <ClCompile Include="Graphic.cpp" />
     <ClCompile Include="GraphicsMove.cpp" />
     <ClCompile Include="Idle.cpp" />
@@ -100,7 +99,6 @@
     <ClInclude Include="SteeringBehaviors.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Walk.h" />
-    <ClInclude Include="WorldPosition.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Fonts\arial.ttf" />

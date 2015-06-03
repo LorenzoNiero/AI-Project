@@ -2,16 +2,27 @@
 
 void SteeringBehaviors::Calculate()
 {
+	SumForces();
+	m_agent->setVelocity(m_agent->getPosition()+m_steering);
+	m_agent->setPosition(m_agent->getPosition()+m_steering);
+	m_agent->setAcceleration(m_agent->getPosition()+ m_steering);
 }
 
 //sommare i comportamenti; evade, wander oppure seek, pursuit
 void SteeringBehaviors::SumForces()
 {
-
-	m_agent->setVelocity((m_agent->getVelocity() + desiredVelocity));
-	m_agent->getVelocity().Truncate(m_agent->getMaxVelocity());
-
-	m_agent->setPosition(m_agent->getPosition() + m_agent->getVelocity());
+	if (SeekIsOn()) 
+		m_steering += Seek(m_target);
+	if (FleeIsOn()) 
+		m_steering += Flee(m_target);
+	if (ArriveIsOn()) 
+		m_steering += Arrive(m_target);
+	if (PursuitIsOn()) 
+		m_steering += Pursuit(m_evader);
+	if (EvadeIsOn()) 
+		m_steering += Evade(m_evader);
+	if (WanderIsOn()) 
+		m_steering += Wander();
 }
 
 
@@ -21,7 +32,7 @@ Vector2 SteeringBehaviors::Seek(const Vector2& target)
 	distance = target - m_agent->getPosition();
 	desiredVelocity = distance.NormalizeCopy() * m_agent->getMaxVelocity();
 	force = desiredVelocity - m_agent->getVelocity();
-
+	
 	return force;
 }
 
@@ -112,27 +123,33 @@ Vector2 SteeringBehaviors::Wander()
 
 //TO DO: da non implementare
 //obstacle
-Vector2 SteeringBehaviors::ObstacleAvoidance()
-{
-}
-
-Vector2 SteeringBehaviors::WallAvoidance(const Vector2& target)
-{
-}
-
-Vector2 SteeringBehaviors::Interpose(const Vector2& target)
-{
-}
-
-//group
-Vector2 SteeringBehaviors::Separation(const std::vector<Agent*>& neighbors)
-{
-}
-
-Vector2 SteeringBehaviors::Cohesion(const std::vector<Agent*>& neighbors)
-{
-}
-
-Vector2 SteeringBehaviors::Alignment(const Vector2& target)
-{
-}
+//Vector2 SteeringBehaviors::ObstacleAvoidance()
+//{
+//	return;
+//}
+//
+//Vector2 SteeringBehaviors::WallAvoidance(const Vector2& target)
+//{
+//	return;
+//}
+//
+//Vector2 SteeringBehaviors::Interpose(const Vector2& target)
+//{
+//	return;
+//}
+//
+////group
+//Vector2 SteeringBehaviors::Separation(const std::vector<Agent*>& neighbors)
+//{
+//	return;
+//}
+//
+//Vector2 SteeringBehaviors::Cohesion(const std::vector<Agent*>& neighbors)
+//{
+//	return;
+//}
+//
+//Vector2 SteeringBehaviors::Alignment(const Vector2& target)
+//{
+//	return;
+//}

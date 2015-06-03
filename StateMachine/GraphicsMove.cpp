@@ -41,6 +41,10 @@ void GraphicsMove::Draw() {
 	window.draw(circleCurrentState);*/
 
 	for (int i = 0; i < m_VectorCircle->size(); i++) {
+		Vector2 position = m_VectorAgent->at(i)->getPosition();
+
+		m_VectorCircle->at(i)->setPosition(position.x, position.y);
+
 		window.draw(*(m_VectorCircle->at(i)));
 	}
 

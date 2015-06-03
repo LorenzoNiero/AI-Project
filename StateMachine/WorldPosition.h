@@ -1,0 +1,1 @@
+#define const static Vector2 Mine

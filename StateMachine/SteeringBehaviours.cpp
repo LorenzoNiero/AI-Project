@@ -17,8 +17,6 @@ void SteeringBehaviors::SumForces()
 
 Vector2 SteeringBehaviors::Seek(const Vector2& target)
 {
-	m_target = target;
-
 	Vector2 distance, desiredVelocity, force;
 	distance = target - m_agent->getPosition();
 	desiredVelocity = distance.NormalizeCopy() * m_agent->getMaxVelocity();
@@ -29,8 +27,6 @@ Vector2 SteeringBehaviors::Seek(const Vector2& target)
 
 Vector2 SteeringBehaviors::Flee(const Vector2& target)
 {
-	m_target = target;
-
 	Vector2 distance, desiredVelocity, force;
 	distance = m_agent->getPosition() - target;
 	desiredVelocity = distance.NormalizeCopy() * m_agent->getMaxVelocity();
@@ -41,7 +37,23 @@ Vector2 SteeringBehaviors::Flee(const Vector2& target)
 
 Vector2 SteeringBehaviors::Arrive(const Vector2& target)
 {
+	Vector2 desiredVelocity, force;
+	desiredVelocity = target - m_agent->getPosition();
+	float d = desiredVelocity.Length();
+	desiredVelocity.Normalize();
 
+	if (d < 100) 
+	{
+		float m = d/100;
+		desiredVelocity *= m;
+	}
+	else 
+	{
+		desiredVelocity *= m_agent->getMaxVelocity();
+	}
+	force = desiredVelocity - m_agent->getVelocity();
+	
+	return force;
 }
 
 Vector2 SteeringBehaviors::Pursuit(const Agent* target)

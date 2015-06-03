@@ -5,15 +5,19 @@
 class Agent {
 public:
 	virtual ~Agent() {};
-	virtual void Update() = 0;
+	virtual void Update(){};
 	
-	Vector2 getPosition() const { return m_position; }
-	void setPosition(Vector2 val) { m_position = val; }
+	virtual void setPosition(Vector2 val);
+	virtual Vector2 getPosition();
 
-	Vector2 Velocity() const { return m_velocity; }
-	void Velocity(Vector2 val) { m_velocity = val; }
+	float getMaxVelocity();
+	void setMaxVelocity(float val);
 
-private :
+	Vector2 getVelocity();
+	void setVelocity(Vector2 val);
+
+private:
 	Vector2 m_position;
-	Vector2 m_velocity;
+	Vector2 velocity;
+	float m_maxVelocity;
 };

@@ -28,6 +28,12 @@
     <ClCompile Include="SteeringBehaviours.cpp">
       <Filter>Cpp File</Filter>
     </ClCompile>
+    <ClCompile Include="GraphicsMove.cpp">
+      <Filter>Cpp File</Filter>
+    </ClCompile>
+    <ClCompile Include="Agent.cpp">
+      <Filter>Cpp File</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h">
@@ -61,6 +67,9 @@
       <Filter>Header File</Filter>
     </ClInclude>
     <ClInclude Include="SteeringBehaviors.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsMove.h">
       <Filter>Header File</Filter>
     </ClInclude>
   </ItemGroup>

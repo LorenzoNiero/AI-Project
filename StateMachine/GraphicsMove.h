@@ -14,7 +14,7 @@ public:
 	~GraphicsMove();
 
 	void Initialize();
-	void Draw();
+	void Draw(Miner miner);
 	
 	void addActor(Miner *agent);
 private:
@@ -24,6 +24,7 @@ private:
 	sf::CircleShape circleHome;
 	std::vector<Miner*> *m_VectorAgent;
 	std::vector<sf::CircleShape *> *m_VectorCircle;
+	sf::CircleShape minerCircle;
 	sf::Color color;
 	sf::RenderWindow window;
 };

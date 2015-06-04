@@ -8,9 +8,9 @@ Miner::Miner() {
 	m_eLocation = home;
 
 	setPosition({ 20, 50 });
-	setVelocity({ 0.0001f, 0.0001f });
-	setAcceleration({ 0.0001f, 0.0001f });
-	setMaxVelocity(0.001f);
+	setVelocity({ 1.f, 1.f });
+	setAcceleration({ 0.5f, 0.5f });
+	setMaxVelocity(5.0f);
 
 	m_pMinerStateMachine = new MinerStateMachine(this);
 	State<Miner>* m_pStartState = (State<Miner>*)&Idle::getIInstance();

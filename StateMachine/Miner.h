@@ -9,7 +9,7 @@
 #include "SteeringBehaviors.h"
 
 
-const Vector2 positionMine(750, 500);
+const Vector2 positionMine(750, 50);
 const Vector2 positionHome(5, 50);
 
 enum location_type{

@@ -2,27 +2,33 @@
 
 void SteeringBehaviors::Calculate()
 {
+	m_steering.Zero();
 	SumForces();
-	m_agent->setVelocity(m_agent->getPosition()+m_steering);
-	m_agent->setPosition(m_agent->getPosition()+m_steering);
-	m_agent->setAcceleration(m_agent->getPosition()+ m_steering);
+	//m_agent->setVelocity(m_agent->getVelocity()+ m_steering);
+	//m_agent->setPosition(m_agent->getPosition()+ m_steering);
+	//m_agent->setAcceleration(m_agent->getAcceleration()+ m_steering);
+
+
 }
 
 //sommare i comportamenti; evade, wander oppure seek, pursuit
 void SteeringBehaviors::SumForces()
 {
+	Vector2 force = Vector2::ZERO;
 	if (SeekIsOn()) 
-		m_steering += Seek(m_target);
+		force += Seek(m_target);
 	if (FleeIsOn()) 
-		m_steering += Flee(m_target);
+		force += Flee(m_target);
 	if (ArriveIsOn()) 
-		m_steering += Arrive(m_target);
+		force += Arrive(m_target);
 	if (PursuitIsOn()) 
-		m_steering += Pursuit(m_evader);
+		force += Pursuit(m_evader);
 	if (EvadeIsOn()) 
-		m_steering += Evade(m_evader);
+		force += Evade(m_evader);
 	if (WanderIsOn()) 
-		m_steering += Wander();
+		force += Wander();
+
+	m_steering += force;
 }
 
 

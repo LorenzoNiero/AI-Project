@@ -21,7 +21,12 @@ void Walk::Enter(Miner* miner){
 
 void Walk::Execute(Miner* miner){
 	miner->decreaseKlm();
-	std::cout << "KM : " << miner->getKlm() << "  Pos : " << miner->getPosition().x << " , " << miner->getPosition().y << std::endl;
+	std::cout 
+		<< "KM : " << miner->getKlm() 
+		<< "  Pos : " << miner->getPosition().x << " , " << miner->getPosition().y 
+		<< "  Vel : " << miner->getVelocity().x << " , " << miner->getVelocity().y
+		<< "  Acc : " << miner->getAcceleration().x << " , " << miner->getAcceleration().y
+		<< std::endl;
 
 	if (miner->getKlm() < 0) {
 		switch (miner->getFromLocation())

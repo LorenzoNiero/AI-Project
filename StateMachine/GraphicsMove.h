@@ -13,7 +13,7 @@ public:
 	GraphicsMove(){};
 	~GraphicsMove();
 
-	void Initialize();
+	void Initialize(Vector2);
 	void Draw(Miner &miner);
 	
 	void addActor(Miner *agent);

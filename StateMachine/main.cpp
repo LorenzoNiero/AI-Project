@@ -10,7 +10,7 @@ int main() {
 	gra.Initialize();
 
 	GraphicsMove graMove;
-	graMove.Initialize();
+	graMove.Initialize(bob.getPosition());
 
 	//graMove.addActor(bob);
 

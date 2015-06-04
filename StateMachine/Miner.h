@@ -10,7 +10,7 @@
 
 
 const Vector2 positionMine(750, 50);
-const Vector2 positionHome(50, 50);
+const Vector2 positionHome(5, 50);
 
 enum location_type{
 	home,
@@ -51,7 +51,4 @@ private:
 	location_type m_eLocation,m_efromLocation;
 	int m_istamina;
 	int m_iklm;
-	Vector2 m_minerPos{2,2};
-	Vector2 m_minerVel{1,1};
-	Vector2 m_minerAcc{1,1};
 };

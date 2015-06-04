@@ -8,9 +8,9 @@ Miner::Miner() {
 	m_eLocation = home;
 
 	setPosition({ 20, 50 });
-	setVelocity({ 1, 2 });
-	setAcceleration({ 2, 1 });
-	setMaxVelocity(1.0f);
+	setVelocity({ 0.0001f, 0.0001f });
+	setAcceleration({ 0.0001f, 0.0001f });
+	setMaxVelocity(0.001f);
 
 	m_pMinerStateMachine = new MinerStateMachine(this);
 	State<Miner>* m_pStartState = (State<Miner>*)&Idle::getIInstance();
@@ -23,4 +23,6 @@ void Miner::Update()
 {
 	m_pMinerStateMachine->Update();
 	m_pSteeringBehaviors->Calculate();
+	setVelocity(m_pSteeringBehaviors->GetForce());
+	setPosition(getPosition()+getVelocity());
 }

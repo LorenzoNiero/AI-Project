@@ -7,10 +7,10 @@ Miner::Miner() {
 	m_istamina = 0;
 	m_eLocation = home;
 
-	setPosition({ 20, 50 });
-	setVelocity({ 1.f, 1.f });
+	setPosition({ 20.0f, 50.0f });
+	//setVelocity({ 0.5f, 0.5f }); // non dovrebbe avere una base di velocità, dovrebbe essere 0
 	setAcceleration({ 0.5f, 0.5f });
-	setMaxVelocity(5.0f);
+	setMaxVelocity(2.0f);
 
 	m_pMinerStateMachine = new MinerStateMachine(this);
 	State<Miner>* m_pStartState = (State<Miner>*)&Idle::getIInstance();

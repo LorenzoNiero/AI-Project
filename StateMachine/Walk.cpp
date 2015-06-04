@@ -27,16 +27,21 @@ void Walk::Execute(Miner* miner){
 		<< "  Vel : " << miner->getVelocity().x << " , " << miner->getVelocity().y
 		<< "  Acc : " << miner->getAcceleration().x << " , " << miner->getAcceleration().y
 		<< std::endl;
+	
 
-	if (miner->getKlm() < 0) {
-		switch (miner->getFromLocation())
-		{
-		case home: miner->getStateMachine()->ChangeState(&Mining::getMInstance()); break;
-		case mine: miner->getStateMachine()->ChangeState(&Idle::getIInstance()); break;
-		default:
-			break;
-		}
-	}
+	//Vector2 distToTarget = positionMine - miner->getPosition();
+	//float distance = distToTarget.Length();
+	//if (distance < 30) { miner->getStateMachine()->ChangeState(&Mining::getMInstance()); }
+
+
+		//switch (miner->getPosition())
+		//{
+		//case : miner->getStateMachine()->ChangeState(&Mining::getMInstance()); break;
+		//case : miner->getStateMachine()->ChangeState(&Idle::getIInstance()); break;
+		//default:
+		//	break;
+		//}
+	
 }
 
 void Walk::Exit(Miner* miner){

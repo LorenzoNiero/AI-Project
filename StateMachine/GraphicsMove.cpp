@@ -9,9 +9,9 @@ void GraphicsMove::Initialize() {
 	circleHome.setFillColor(color.Yellow);
 	circleHome.setPosition(positionHome.x, positionHome.y);
 
-	circleHome.setRadius(20.f);
-	circleHome.setFillColor(color.Yellow);
-	circleHome.setPosition(positionMine.x, positionMine.y);
+	circleMine.setRadius(20.f);
+	circleMine.setFillColor(color.Yellow);
+	circleMine.setPosition(positionMine.x, positionMine.y);
 
 	minerCircle.setRadius(20.f);
 	minerCircle.setFillColor(color.Blue);

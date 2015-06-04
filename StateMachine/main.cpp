@@ -18,8 +18,7 @@ int main() {
 		bob.Update();
 		gra.Draw(bob.getLocation());
 		graMove.Draw(bob);
-
-		
+				
 		//graMove.Draw(bob.getLocation());
 	}
 

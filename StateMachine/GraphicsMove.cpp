@@ -1,6 +1,6 @@
 #include "GraphicsMove.h"
 
-void GraphicsMove::Initialize() {
+void GraphicsMove::Initialize(Vector2 minerPos) {
 
 	m_VectorAgent = new std::vector<Miner*>();
 	m_VectorCircle = new std::vector<sf::CircleShape *>();
@@ -13,9 +13,9 @@ void GraphicsMove::Initialize() {
 	circleMine.setFillColor(color.Yellow);
 	circleMine.setPosition(positionMine.x, positionMine.y);
 
-	minerCircle.setRadius(20.f);
-	minerCircle.setFillColor(color.Blue);
-	minerCircle.setPosition(0, 0);
+	minerCircle.setRadius(10.f);
+	minerCircle.setFillColor(color.Red);
+	minerCircle.setPosition(minerPos.x, minerPos.y);
 
 	window.create(sf::VideoMode(800, 600), "FSM Miner at Work!");
 }

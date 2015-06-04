@@ -33,8 +33,6 @@ Vector2 SteeringBehaviors::Seek(const Vector2& target)
 	desiredVelocity = distance.NormalizeCopy() * m_agent->getMaxVelocity();
 	force = desiredVelocity - m_agent->getVelocity();
 	
-	//std::cout << "distance " << distance.x <<" "<<distance.y << " distance normal " << distance.NormalizeCopy().x << " "<<distance.NormalizeCopy().y << std::endl;
-	std::cout << "force " << force.x << " " << force.y << "velociti"<<m_agent->getMaxVelocity() << std::endl;
 	return force;
 }
 

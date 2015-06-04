@@ -6,11 +6,13 @@ Miner::Miner() {
 
 	m_istamina = 0;
 	m_eLocation = home;
-	setAcceleration(m_minerAcc);
-	setPosition(m_minerPos);
-	setVelocity(m_minerVel);
 
 	std::cout << "creo minatore" << std::endl;
+
+	setPosition({ 20, 50 });
+	setVelocity({ 1, 2 });
+	setAcceleration({ 2, 1 });
+	setMaxVelocity(1.0f);
 
 	m_pMinerStateMachine = new MinerStateMachine(this);
 	State<Miner>* m_pStartState = (State<Miner>*)&Idle::getIInstance();
@@ -18,7 +20,6 @@ Miner::Miner() {
 
 	m_pSteeringBehaviors = new SteeringBehaviors(this);
 
-	setMaxVelocity(10);
 		
 }
 

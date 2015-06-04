@@ -23,8 +23,7 @@ class Miner : public Agent {
 public:
 	Miner();
 	~Miner(){
-	std::cout << "distruggo" << std::endl;
-
+		delete m_pMinerStateMachine;
 	};
 
 	void Update();
@@ -51,7 +50,8 @@ private:
 	location_type m_eLocation,m_efromLocation;
 	int m_istamina;
 	int m_iklm;
-	Vector2 m_minerPos{2,2};
+	
+	Vector2 m_minerPos{ positionHome.x, positionHome.y };
 	Vector2 m_minerVel{1,1};
 	Vector2 m_minerAcc{1,1};
 };

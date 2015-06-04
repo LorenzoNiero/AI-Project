@@ -13,16 +13,16 @@ void SteeringBehaviors::SumForces()
 {
 	if (SeekIsOn()) 
 		m_steering += Seek(m_target);
-	if (FleeIsOn()) 
+	/*if (FleeIsOn()) 
 		m_steering += Flee(m_target);
 	if (ArriveIsOn()) 
-		m_steering += Arrive(m_target);
-	if (PursuitIsOn()) 
+		m_steering += Arrive(m_target);*/
+	/*if (PursuitIsOn()) 
 		m_steering += Pursuit(m_evader);
 	if (EvadeIsOn()) 
 		m_steering += Evade(m_evader);
 	if (WanderIsOn()) 
-		m_steering += Wander();
+		m_steering += Wander();*/
 }
 
 
@@ -33,6 +33,8 @@ Vector2 SteeringBehaviors::Seek(const Vector2& target)
 	desiredVelocity = distance.NormalizeCopy() * m_agent->getMaxVelocity();
 	force = desiredVelocity - m_agent->getVelocity();
 	
+	//std::cout << "distance " << distance.x <<" "<<distance.y << " distance normal " << distance.NormalizeCopy().x << " "<<distance.NormalizeCopy().y << std::endl;
+	std::cout << "force " << force.x << " " << force.y << "velociti"<<m_agent->getMaxVelocity() << std::endl;
 	return force;
 }
 

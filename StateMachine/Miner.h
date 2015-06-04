@@ -22,7 +22,10 @@ class MinerStateMachine;
 class Miner : public Agent {
 public:
 	Miner();
-	~Miner(){ delete m_pMinerStateMachine;	};
+	~Miner(){
+	std::cout << "distruggo" << std::endl;
+
+	};
 
 	void Update();
 	void increaseStamina() { m_istamina++; };

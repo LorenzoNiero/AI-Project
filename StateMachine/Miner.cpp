@@ -1,6 +1,9 @@
 #include "Miner.h"
 
 Miner::Miner() {
+
+	std::cout << "creo minatore" << std::endl;
+
 	m_istamina = 0;
 	m_eLocation = home;
 	setAcceleration(m_minerAcc);

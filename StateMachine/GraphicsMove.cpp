@@ -7,16 +7,20 @@ void GraphicsMove::Initialize() {
 
 	circleHome.setRadius(20.f);
 	circleHome.setFillColor(color.Yellow);
+	circleHome.setPosition(positionHome.x, positionHome.y);
+
+	circleHome.setRadius(20.f);
+	circleHome.setFillColor(color.Yellow);
 	circleHome.setPosition(positionMine.x, positionMine.y);
 
 	minerCircle.setRadius(20.f);
-	minerCircle.setFillColor(color.Yellow);
+	minerCircle.setFillColor(color.Blue);
 	minerCircle.setPosition(0, 0);
 
 	window.create(sf::VideoMode(800, 600), "FSM Miner at Work!");
 }
 
-void GraphicsMove::Draw(Miner miner) {
+void GraphicsMove::Draw(Miner& miner) {
 
 	sf::Event event;
 	while (window.pollEvent(event))
@@ -25,32 +29,14 @@ void GraphicsMove::Draw(Miner miner) {
 			window.close();
 	}
 
-	/*switch (location){
-	case home: circleCurrentState.setFillColor(color.Green); break;
-	case walking: circleCurrentState.setFillColor(color.Yellow); break;
-	case mine: circleCurrentState.setFillColor(color.Red); break;
-	default: circleCurrentState.setFillColor(color.White); break;
-	}*/
-
 	window.clear();
 	window.draw(circleHome);
-	/*window.draw(circleIdle);
-	window.draw(textIdle);
-	window.draw(circleWalk);
-	window.draw(textWalk);
-	window.draw(circleMining);
-	window.draw(textMining);
-	window.draw(textCurrentState);
-	window.draw(circleCurrentState);*/
+	window.draw(circleMine);
 
-	/*for (int i = 0; i < m_VectorCircle->size(); i++) {
-		Vector2 position = m_VectorAgent->at(i).getPosition();
-		
-		window.draw(*(m_VectorCircle->at(i)));
-	}*/
 	minerCircle.setPosition(miner.getPosition().x, miner.getPosition().y);
 
 	window.draw(minerCircle);
+	
 	window.display();
 
 }
@@ -70,11 +56,11 @@ void GraphicsMove::addActor(Miner *agent)
 
 GraphicsMove::~GraphicsMove(){
 
-	for (int i = 0; i < m_VectorCircle->size(); i++) {		
+	/*for (int i = 0; i < m_VectorCircle->size(); i++) {		
 		delete m_VectorAgent->at(i);
 		delete m_VectorCircle->at(i);
 	}
 
 	delete m_VectorAgent;
-	delete m_VectorCircle;
+	delete m_VectorCircle;*/
 }

@@ -4,19 +4,20 @@
 
 int main() {
 
-	Miner *bob= new Miner();
+	Miner bob;
+	
 	Graphic gra;
 	gra.Initialize();
 
 	GraphicsMove graMove;
 	graMove.Initialize();
 
-	graMove.addActor(bob);
+	//graMove.addActor(bob);
 
 	while (true){
-		bob->Update();
-		gra.Draw(bob->getLocation());
-		graMove.Draw(*bob);
+		bob.Update();
+		gra.Draw(bob.getLocation());
+		graMove.Draw(bob);
 
 		
 		//graMove.Draw(bob.getLocation());

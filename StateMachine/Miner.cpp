@@ -9,6 +9,7 @@ Miner::Miner() {
 
 	setPosition({ 20.0f, 50.0f });
 	//setVelocity({ 0.5f, 0.5f }); // non dovrebbe avere una base di velocità, dovrebbe essere 0
+
 	setAcceleration({ 0.5f, 0.5f });
 	setMaxVelocity(2.0f);
 

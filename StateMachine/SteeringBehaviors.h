@@ -14,7 +14,7 @@ class SteeringBehaviors
 {
 
 public:
-	SteeringBehaviors(Agent* bp) :	m_agent(bp)	{};
+	SteeringBehaviors(Agent* bp) : m_agent(bp)	{ m_iFlags = 0; };
 
 	~SteeringBehaviors();
 

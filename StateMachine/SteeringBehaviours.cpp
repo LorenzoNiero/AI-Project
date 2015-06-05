@@ -35,7 +35,7 @@ Vector2 SteeringBehaviors::Seek(const Vector2& target)
 	Vector2 desiredVelocity, force;
 	float stopRadius = 10.0f;
 	desiredVelocity = target - m_agent->getPosition();
-	if (desiredVelocity.Length() <5.0f){ return Vector2::ZERO; }
+	if (desiredVelocity.Length() < stopRadius){ return Vector2::ZERO; }
 	desiredVelocity = desiredVelocity.NormalizeCopy();
 	desiredVelocity *= m_agent->getMaxVelocity();
 	force = desiredVelocity - m_agent->getVelocity();

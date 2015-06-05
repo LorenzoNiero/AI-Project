@@ -14,7 +14,14 @@ void Walk::Enter(Miner* miner){
 	miner->resetKlm();
 	miner->setFromLocation(miner->getLocation());
 	miner->setLocation(walking);
-	miner->getSteeringBehavior()->SetTarget(positionMine);
+	if (miner->getFromLocation() == home)
+	{
+		miner->getSteeringBehavior()->SetTarget(positionMine);
+	}
+	else
+	{
+		miner->getSteeringBehavior()->SetTarget(positionHome);
+	}
 	miner->getSteeringBehavior()->SeekOn();
 	miner->getSteeringBehavior()->ArriveOn();
 }
@@ -28,10 +35,19 @@ void Walk::Execute(Miner* miner){
 		<< "  Acc : " << miner->getAcceleration().x << " , " << miner->getAcceleration().y
 		<< std::endl;
 	
-
-	//Vector2 distToTarget = positionMine - miner->getPosition();
-	//float distance = distToTarget.Length();
-	//if (distance < 30) { miner->getStateMachine()->ChangeState(&Mining::getMInstance()); }
+	
+	Vector2 distToTarget = miner->getSteeringBehavior()->GetTarget() - miner->getPosition();
+	float distance = distToTarget.Length();
+	if (distance <= 0) { 
+		if (miner->getFromLocation() == home)
+		{
+			miner->getStateMachine()->ChangeState(&Mining::getMInstance());
+		}
+		else
+		{
+			miner->getStateMachine()->ChangeState(&Idle::getIInstance());
+		}
+	}
 
 
 		//switch (miner->getPosition())

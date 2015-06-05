@@ -8,7 +8,7 @@ Miner::Miner() {
 	m_eLocation = home;
 
 	setPosition({ 20, 50 });
-	setVelocity({ 1.f, 1.f });
+	setVelocity({ 0.5f, 0.5f });
 	setAcceleration({ 0.5f, 0.5f });
 	setMaxVelocity(5.0f);
 

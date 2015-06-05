@@ -55,16 +55,18 @@ Vector2 SteeringBehaviors::Arrive(const Vector2& target)
 	float d = desiredVelocity.Length();
 	desiredVelocity.Normalize();
 
-	if (d < 100) 
+	if (d <= 100) 
 	{
-		float m = d/100;
-		desiredVelocity *= m;
+		desiredVelocity *= m_agent->getMaxVelocity() * (d / 100);
 	}
 	else 
 	{
 		desiredVelocity *= m_agent->getMaxVelocity();
 	}
 	force = desiredVelocity - m_agent->getVelocity();
+
+	if (force.x <= 750.f)
+		force.x = 0;
 	
 	return force;
 }

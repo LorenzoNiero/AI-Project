@@ -2,9 +2,11 @@
 
 void SteeringBehaviors::Calculate()
 {
-	m_steering.Zero();
+	m_steering.ZERO;
 	SumForces();
+	//m_steering += m_agent->getVelocity();
 	m_steering.Truncate(m_agent->getMaxVelocity());
+	std::cout << "    STEERING   :  " << m_steering.x << " , " << m_steering.y << std::endl;
 }
 
 //sommare i comportamenti; evade, wander oppure seek, pursuit
@@ -30,11 +32,14 @@ void SteeringBehaviors::SumForces()
 
 Vector2 SteeringBehaviors::Seek(const Vector2& target)
 {
-	Vector2 distance, desiredVelocity, force;
-	distance = target - m_agent->getPosition();
-	desiredVelocity = distance.NormalizeCopy() * m_agent->getMaxVelocity();
+	Vector2 desiredVelocity, force;
+	float stopRadius = 10.0f;
+	desiredVelocity = target - m_agent->getPosition();
+	if (desiredVelocity.Length() <5.0f){ return Vector2::ZERO; }
+	desiredVelocity = desiredVelocity.NormalizeCopy();
+	desiredVelocity *= m_agent->getMaxVelocity();
 	force = desiredVelocity - m_agent->getVelocity();
-	
+
 	return force;
 }
 
@@ -51,22 +56,25 @@ Vector2 SteeringBehaviors::Flee(const Vector2& target)
 Vector2 SteeringBehaviors::Arrive(const Vector2& target)
 {
 	Vector2 desiredVelocity, force;
+	float slowRadius = 100.0f;
+	float stopRadius = 10.0f;
 	desiredVelocity = target - m_agent->getPosition();
-	float d = desiredVelocity.Length();
-	desiredVelocity.Normalize();
+	float distance = desiredVelocity.Length(); 
+	std::cout << " DISTANZA : " << distance << std::endl;
+	desiredVelocity=desiredVelocity.NormalizeCopy();
 
-	if (d <= 100) 
+	if (distance < slowRadius)
 	{
-		desiredVelocity *= m_agent->getMaxVelocity() * (d / 100);
+		if (distance < stopRadius) { return Vector2::ZERO - m_agent->getVelocity(); }
+		float m = (distance / slowRadius) ;
+		std::cout << " DISTANZA M : " << m << std::endl;
+		desiredVelocity *= m;
 	}
 	else 
 	{
 		desiredVelocity *= m_agent->getMaxVelocity();
 	}
 	force = desiredVelocity - m_agent->getVelocity();
-
-	if (force.x <= 750.f)
-		force.x = 0;
 	
 	return force;
 }

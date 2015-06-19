@@ -1,13 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AStar", "AIProgramming\AIProgramming.vcxproj", "{9B843E1E-1C11-4FBD-8E7F-B68DC111E9DA}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StateMachine", "StateMachine\StateMachine.vcxproj", "{FB0584F9-FB69-44ED-8D2F-2629704E0FBE}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AISandBox", "AISandBox\AISandBox.vcxproj", "{DA093C37-FDD9-47A2-BA4B-6F17935B73D4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FB0584F9-FB69-44ED-8D2F-2629704E0FBE} = {FB0584F9-FB69-44ED-8D2F-2629704E0FBE}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

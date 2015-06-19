@@ -16,7 +16,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -78,7 +78,7 @@
     <ClCompile Include="Graphic.cpp" />
     <ClCompile Include="GraphicsMove.cpp" />
     <ClCompile Include="Idle.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="main_todo_delete.cpp" />
     <ClCompile Include="Miner.cpp" />
     <ClCompile Include="MinerStateMachine.cpp" />
     <ClCompile Include="Mining.cpp" />

@@ -12,7 +12,7 @@ void SteeringBehaviors::Calculate()
 //sommare i comportamenti; evade, wander oppure seek, pursuit
 void SteeringBehaviors::SumForces()
 {
-	Vector2 force = Vector2::ZERO;
+	SMnamespace::Vector2 force = SMnamespace::Vector2::ZERO;
 	if (SeekIsOn()) 
 		force += Seek(m_target);
 	if (FleeIsOn()) 
@@ -30,12 +30,12 @@ void SteeringBehaviors::SumForces()
 }
 
 
-Vector2 SteeringBehaviors::Seek(const Vector2& target)
+SMnamespace::Vector2 SteeringBehaviors::Seek(const SMnamespace::Vector2& target)
 {
-	Vector2 desiredVelocity, force;
+	SMnamespace::Vector2 desiredVelocity, force;
 	float stopRadius = 10.0f;
 	desiredVelocity = target - m_agent->getPosition();
-	if (desiredVelocity.Length() < stopRadius){ return Vector2::ZERO; }
+	if (desiredVelocity.Length() < stopRadius){ return SMnamespace::Vector2::ZERO; }
 	desiredVelocity = desiredVelocity.NormalizeCopy();
 	desiredVelocity *= m_agent->getMaxVelocity();
 	force = desiredVelocity - m_agent->getVelocity();
@@ -43,9 +43,9 @@ Vector2 SteeringBehaviors::Seek(const Vector2& target)
 	return force;
 }
 
-Vector2 SteeringBehaviors::Flee(const Vector2& target)
+SMnamespace::Vector2 SteeringBehaviors::Flee(const SMnamespace::Vector2& target)
 {
-	Vector2 distance, desiredVelocity, force;
+	SMnamespace::Vector2 distance, desiredVelocity, force;
 	distance = m_agent->getPosition() - target;
 	desiredVelocity = distance.NormalizeCopy() * m_agent->getMaxVelocity();
 	force = desiredVelocity - m_agent->getVelocity();
@@ -53,9 +53,9 @@ Vector2 SteeringBehaviors::Flee(const Vector2& target)
 	return force;
 }
 
-Vector2 SteeringBehaviors::Arrive(const Vector2& target)
+SMnamespace::Vector2 SteeringBehaviors::Arrive(const SMnamespace::Vector2& target)
 {
-	Vector2 desiredVelocity, force;
+	SMnamespace::Vector2 desiredVelocity, force;
 	float slowRadius = 100.0f;
 	float stopRadius = 10.0f;
 	desiredVelocity = target - m_agent->getPosition();
@@ -65,7 +65,7 @@ Vector2 SteeringBehaviors::Arrive(const Vector2& target)
 
 	if (distance < slowRadius)
 	{
-		if (distance < stopRadius) { return Vector2::ZERO - m_agent->getVelocity(); }
+		if (distance < stopRadius) { return SMnamespace::Vector2::ZERO - m_agent->getVelocity(); }
 		float m = (distance / slowRadius) ;
 		std::cout << " DISTANZA M : " << m << std::endl;
 		desiredVelocity *= m;
@@ -79,9 +79,9 @@ Vector2 SteeringBehaviors::Arrive(const Vector2& target)
 	return force;
 }
 
-Vector2 SteeringBehaviors::Pursuit(const Agent* target)
+SMnamespace::Vector2 SteeringBehaviors::Pursuit(const Agent* target)
 {
-	Vector2 distance, targetFuturePosition;
+	SMnamespace::Vector2 distance, targetFuturePosition;
 	float T;
 
 	//distance = target->getPosition() - m_agent->getPosition();
@@ -94,9 +94,9 @@ Vector2 SteeringBehaviors::Pursuit(const Agent* target)
 	return Seek(targetFuturePosition);
 }
 
-Vector2 SteeringBehaviors::Evade(const Agent* target)
+SMnamespace::Vector2 SteeringBehaviors::Evade(const Agent* target)
 {
-	Vector2 distance, targetFuturePosition;
+	SMnamespace::Vector2 distance, targetFuturePosition;
 	float T;
 
 	//distance = target->getPosition() - m_agent->getPosition();
@@ -109,10 +109,10 @@ Vector2 SteeringBehaviors::Evade(const Agent* target)
 	return Flee(targetFuturePosition);
 }
 
-Vector2 SteeringBehaviors::Wander()
+SMnamespace::Vector2 SteeringBehaviors::Wander()
 {
-	Vector2 circleCenter, desiredVelocity, wanderForce;
-	Vector2 displacement = { 0, -1 };
+	SMnamespace::Vector2 circleCenter, desiredVelocity, wanderForce;
+	SMnamespace::Vector2 displacement = { 0, -1 };
 	float wanderAngle = 0;
 
 	circleCenter = m_agent->getVelocity();
@@ -121,7 +121,7 @@ Vector2 SteeringBehaviors::Wander()
 	desiredVelocity = displacement.NormalizeCopy() * m_agent->getCircleRadius();
 
 	//set angle, randomly change the vector direction by making it change its current angle
-	Vector2 pos;
+	SMnamespace::Vector2 pos;
 	pos.x = cos(wanderAngle) * displacement.Length();
 	pos.y = sin(wanderAngle) * displacement.Length();
 	m_agent->setPosition(pos);

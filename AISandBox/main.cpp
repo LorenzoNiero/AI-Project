@@ -13,7 +13,3 @@ int main(int, char const**)
 	
 	exit(0);
 }
-
-
-
-

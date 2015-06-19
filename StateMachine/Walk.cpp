@@ -36,7 +36,7 @@ void Walk::Execute(Miner* miner){
 		<< std::endl;
 	
 	
-	Vector2 distToTarget = miner->getSteeringBehavior()->GetTarget() - miner->getPosition();
+	SMnamespace::Vector2 distToTarget = miner->getSteeringBehavior()->GetTarget() - miner->getPosition();
 	float distance = distToTarget.Length();
 	if (distance <= 0) { 
 		if (miner->getFromLocation() == home)

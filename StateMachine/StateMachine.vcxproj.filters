@@ -7,9 +7,6 @@
     <ClCompile Include="Idle.cpp">
       <Filter>Cpp File</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Cpp File</Filter>
-    </ClCompile>
     <ClCompile Include="Miner.cpp">
       <Filter>Cpp File</Filter>
     </ClCompile>
@@ -29,6 +26,9 @@
       <Filter>Cpp File</Filter>
     </ClCompile>
     <ClCompile Include="GraphicsMove.cpp">
+      <Filter>Cpp File</Filter>
+    </ClCompile>
+    <ClCompile Include="main_todo_delete.cpp">
       <Filter>Cpp File</Filter>
     </ClCompile>
   </ItemGroup>

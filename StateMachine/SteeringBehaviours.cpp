@@ -2,12 +2,9 @@
 
 void SteeringBehaviors::Calculate()
 {
+	m_steering.Zero();
 	SumForces();
-
-	m_agent->setVelocity(m_agent->getPosition()+m_steering);
-	m_agent->setPosition(m_agent->getPosition()+m_steering);
-	m_agent->setAcceleration(m_agent->getPosition()+ m_steering);
-
+	m_steering.Truncate(m_agent->getMaxVelocity());
 }
 
 //sommare i comportamenti; evade, wander oppure seek, pursuit

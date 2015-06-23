@@ -4,13 +4,13 @@
     <ClCompile Include="AStar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Node.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Graphics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_todo_delete.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

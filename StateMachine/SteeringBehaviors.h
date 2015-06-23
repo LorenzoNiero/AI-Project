@@ -14,20 +14,20 @@ class SteeringBehaviors
 {
 
 public:
-	SteeringBehaviors(Agent* bp) :	m_agent(bp)	{};
+	SteeringBehaviors(Agent* bp) : m_agent(bp)	{ m_iFlags = 0; };
 
 	~SteeringBehaviors();
 
-	Vector2 GetTarget()const{ return m_target; }
+	SMnamespace::Vector2 GetTarget()const{ return m_target; }
 	
-	void SetTarget(const Vector2 target) { m_target = target; }
+	void SetTarget(const SMnamespace::Vector2 target) { m_target = target; }
 	void SetEvader(Agent* evader) { m_evader = evader; }
 
 	void SetNeighbors(std::vector<Agent*> nNeighbors) { m_neighbors = nNeighbors; }
 	void SetObstacles(std::vector<Place*> nObstacles) { m_obstacles = nObstacles; }
 
 	
-	Vector2 GetForce()const { return m_steering; }
+	SMnamespace::Vector2 GetForce()const { return m_steering; }
 
 	void Calculate();
 
@@ -79,8 +79,8 @@ private:
 	std::vector<Agent*>		m_neighbors;
 	std::vector<Place*>		m_obstacles;
 
-	Vector2			m_steering;
-	Vector2			m_target;  
+	SMnamespace::Vector2			m_steering;
+	SMnamespace::Vector2			m_target;
 	
 	float			m_thetaValue;
 
@@ -108,20 +108,20 @@ private:
 
 	void SumForces();
 
-	Vector2 Seek(const Vector2& target);
-	Vector2 Flee(const Vector2& target);
-	Vector2 Arrive(const Vector2& target);
-	Vector2 Pursuit(const Agent* target);
-	Vector2 Evade(const Agent* target);
-	Vector2 Wander();
-	Vector2 ObstacleAvoidance();
-	Vector2 WallAvoidance(const Vector2& target);
-	Vector2 Interpose(const Vector2& target);
+	SMnamespace::Vector2 Seek(const SMnamespace::Vector2& target);
+	SMnamespace::Vector2 Flee(const SMnamespace::Vector2& target);
+	SMnamespace::Vector2 Arrive(const SMnamespace::Vector2& target);
+	SMnamespace::Vector2 Pursuit(const Agent* target);
+	SMnamespace::Vector2 Evade(const Agent* target);
+	SMnamespace::Vector2 Wander();
+	SMnamespace::Vector2 ObstacleAvoidance();
+	SMnamespace::Vector2 WallAvoidance(const SMnamespace::Vector2& target);
+	SMnamespace::Vector2 Interpose(const SMnamespace::Vector2& target);
 
 	//group
-	Vector2 Separation(const std::vector<Agent*>& neighbors);
-	Vector2 Cohesion(const std::vector<Agent*>& neighbors);
-	Vector2 Alignment(const Vector2& target);
+	SMnamespace::Vector2 Separation(const std::vector<Agent*>& neighbors);
+	SMnamespace::Vector2 Cohesion(const std::vector<Agent*>& neighbors);
+	SMnamespace::Vector2 Alignment(const SMnamespace::Vector2& target);
 
 };
 

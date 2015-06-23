@@ -9,8 +9,10 @@
 #include "SteeringBehaviors.h"
 
 
-const Vector2 positionMine(750, 500);
-const Vector2 positionHome(5, 50);
+
+const SMnamespace::Vector2 positionMine(750.0f, 50.0f);
+const SMnamespace::Vector2 positionHome(5.0f, 50.0f);
+
 
 enum location_type{
 	home,
@@ -51,8 +53,8 @@ private:
 	int m_istamina;
 	int m_iklm;
 
-	Vector2 m_minerPos{ positionHome.x, positionHome.y };
-	Vector2 m_minerVel{1,1};
-	Vector2 m_minerAcc{1,1};
+	SMnamespace::Vector2 m_minerPos{ positionHome.x, positionHome.y };
+	SMnamespace::Vector2 m_minerVel{ 1, 1 };
+	SMnamespace::Vector2 m_minerAcc{ 1, 1 };
 
 };

@@ -1,44 +1,43 @@
-#ifndef __AStar__AStar__
-#define __AStar__AStar__
+#pragma once
 
 #include <iostream>
 #include <list>
 #include "Node.h"
 #include <vector>
 
-
-class AStar
+namespace ASnamespace
 {
-public:
-	void Run(vector<Node> &result);
-	void Setup();
+	class AStar
+	{
+	public:
+		void Run(std::vector<Node> &result);
+		void Setup();
 
-private:	
-	void CreateGraph();
-	void CreateGraphAdjs(Node* currentNode);
-	void CreateNodeAdj(Node* currentNode, int* adjNodeConfiguration);
-	int* CreateNewConfiguration(int[], int*, int);
+	private:
+		void CreateGraph();
+		void CreateGraphAdjs(Node* currentNode);
+		void CreateNodeAdj(Node* currentNode, int* adjNodeConfiguration);
+		int* CreateNewConfiguration(int[], int*, int);
 
-	void ComputeGraphHeuristics();
-	void ComputeNodeHeuristic(Node* pNode);
+		void ComputeGraphHeuristics();
+		void ComputeNodeHeuristic(Node* pNode);
 
-	void Clean();
+		void Clean();
 
-	void Search(vector<Node> &result);
-	Node* VisitNode();
-	void AddNodeToOpenList(Node* pParent, Node* pNode);
+		void Search(std::vector<Node> &result);
+		Node* VisitNode();
+		void AddNodeToOpenList(Node* pParent, Node* pNode);
 
-	void PrintPath(Node* pNode) const;
+		void PrintPath(Node* pNode) const;
 
-	Node* iStartNode;
-	Node* iEndNode;
-	
-	int startConfig[16];
-	int endConfig[16];
-	int adjNodeConfiguration[16];
+		Node* iStartNode;
+		Node* iEndNode;
 
-	std::list<Node*> tRoot; //Lista di tutti i nodi (contenenti configurazioni)
-	std::list<Node*> qOpenList;
-};
+		int startConfig[16];
+		int endConfig[16];
+		int adjNodeConfiguration[16];
 
-#endif /* defined(__AStar__AStar__) */
+		std::list<Node*> tRoot; //Lista di tutti i nodi (contenenti configurazioni)
+		std::list<Node*> qOpenList;
+	};
+}

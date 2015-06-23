@@ -5,23 +5,23 @@
 #include <vector>
 #include "Node.h"
 
-using namespace sf;
-using namespace std;
+namespace ASnamespace
+{
+	class Graphics{
+		public:
+			Graphics(){};
+			~Graphics(){};
 
-class Graphic{
-public:
-	Graphic(){};
-	~Graphic(){};
+			int Initialize(std::vector<Node> &result);
+			void Draw(std::vector<Node> &result);
+			void setTilePosition(std::vector<Node> &result, std::vector<sf::Sprite> &sprites);
 
-	int Initialize(vector<Node> &result);
-	void Draw(vector<Node> &result);
-	void setTilePosition(vector<Node> &result, vector<Sprite> &sprites);
+			std::vector<sf::Sprite> getSprites() { return sprites; };
 
-	vector<Sprite> getSprites() { return sprites; };
-
-private:
-	RenderWindow window;
-	Texture texture;
-	Sprite sprite;
-	vector<Sprite> sprites;
-};
+		private:
+			sf::RenderWindow window;
+			sf::Texture texture;
+			sf::Sprite sprite;
+			std::vector<sf::Sprite> sprites;
+	};
+}

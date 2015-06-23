@@ -7,12 +7,12 @@ Miner::Miner() {
 	m_istamina = 0;
 	m_eLocation = home;
 
-	std::cout << "creo minatore" << std::endl;
 
-	setPosition({ 20, 50 });
-	setVelocity({ 0.0001f, 0.0001f });
-	setAcceleration({ 0.0001f, 0.0001f });
-	setMaxVelocity(0.001f);
+	setPosition({ 20.0f, 50.0f });
+	//setVelocity({ 0.5f, 0.5f }); // non dovrebbe avere una base di velocità, dovrebbe essere 0
+
+	setAcceleration({ 0.5f, 0.5f });
+	setMaxVelocity(2.0f);
 
 	m_pMinerStateMachine = new MinerStateMachine(this);
 	State<Miner>* m_pStartState = (State<Miner>*)&Idle::getIInstance();

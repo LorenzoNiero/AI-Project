@@ -278,13 +278,3 @@ void AStar::PrintPath(Node* pNode) const
     
     std::cout << "\n\n\n";
 }
-
-
-
-
-
-
-
-
-
-

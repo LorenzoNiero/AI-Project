@@ -1,6 +1,6 @@
 #include "GraphicsMove.h"
 
-void GraphicsMove::Initialize(Vector2 minerPos) {
+void GraphicsMove::Initialize(SMnamespace::Vector2 minerPos) {
 
 	m_VectorAgent = new std::vector<Miner*>();
 	m_VectorCircle = new std::vector<sf::CircleShape *>();

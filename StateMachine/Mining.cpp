@@ -24,5 +24,7 @@ void Mining::Execute(Miner* miner){
 
 void Mining::Exit(Miner* miner){
 	std::cout << "Leaving MINE" << std::endl;
+
+	miner->getSteeringBehavior()->SetTarget(positionHome);
 }
 

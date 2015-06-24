@@ -16,7 +16,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -82,9 +82,12 @@
     <ClCompile Include="Miner.cpp" />
     <ClCompile Include="MinerStateMachine.cpp" />
     <ClCompile Include="Mining.cpp" />
+    <ClCompile Include="Sheep.cpp" />
     <ClCompile Include="SteeringBehaviours.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Walk.cpp" />
+    <ClCompile Include="Wolf.cpp" />
+    <ClCompile Include="WolfStateMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h" />
@@ -94,11 +97,14 @@
     <ClInclude Include="Miner.h" />
     <ClInclude Include="MinerStateMachine.h" />
     <ClInclude Include="Mining.h" />
+    <ClInclude Include="Sheep.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateMachine.h" />
     <ClInclude Include="SteeringBehaviors.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Walk.h" />
+    <ClInclude Include="Wolf.h" />
+    <ClInclude Include="WolfStateMachine.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Fonts\arial.ttf" />

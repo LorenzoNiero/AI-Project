@@ -24,5 +24,7 @@ void Idle::Execute(Miner* miner){
 
 void Idle::Exit(Miner* miner){
 	std::cout << "Leaving HOME" << std::endl;
+	miner->getSteeringBehavior()->SetTarget(positionMine);
+
 }
 

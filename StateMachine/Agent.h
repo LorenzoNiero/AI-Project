@@ -9,6 +9,10 @@ public:
 
 	SMnamespace::Vector2 getPosition() const { return m_vPosition; }
 	void setPosition(SMnamespace::Vector2 val) { m_vPosition = val; }
+	void setPosition( float x, float y ) { 
+		m_vPosition.x = x;
+		m_vPosition.y = y;
+	}
 
 	float getMaxVelocity() const { return m_fMaxVelocity; }
 	void setMaxVelocity(float val) { m_fMaxVelocity = val; }

@@ -31,6 +31,15 @@
     <ClCompile Include="main_todo_delete.cpp">
       <Filter>Cpp File</Filter>
     </ClCompile>
+    <ClCompile Include="Sheep.cpp">
+      <Filter>Cpp File</Filter>
+    </ClCompile>
+    <ClCompile Include="Wolf.cpp">
+      <Filter>Cpp File</Filter>
+    </ClCompile>
+    <ClCompile Include="WolfStateMachine.cpp">
+      <Filter>Cpp File</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h">
@@ -39,25 +48,7 @@
     <ClInclude Include="Graphic.h">
       <Filter>Header File</Filter>
     </ClInclude>
-    <ClInclude Include="Idle.h">
-      <Filter>Header File</Filter>
-    </ClInclude>
-    <ClInclude Include="Miner.h">
-      <Filter>Header File</Filter>
-    </ClInclude>
-    <ClInclude Include="MinerStateMachine.h">
-      <Filter>Header File</Filter>
-    </ClInclude>
-    <ClInclude Include="Mining.h">
-      <Filter>Header File</Filter>
-    </ClInclude>
-    <ClInclude Include="State.h">
-      <Filter>Header File</Filter>
-    </ClInclude>
     <ClInclude Include="StateMachine.h">
-      <Filter>Header File</Filter>
-    </ClInclude>
-    <ClInclude Include="Walk.h">
       <Filter>Header File</Filter>
     </ClInclude>
     <ClInclude Include="Vector2.h">
@@ -69,6 +60,33 @@
     <ClInclude Include="GraphicsMove.h">
       <Filter>Header File</Filter>
     </ClInclude>
+    <ClInclude Include="Sheep.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="MinerStateMachine.h">
+      <Filter>Header File\Miner</Filter>
+    </ClInclude>
+    <ClInclude Include="Miner.h">
+      <Filter>Header File\Miner</Filter>
+    </ClInclude>
+    <ClInclude Include="Idle.h">
+      <Filter>Header File\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Mining.h">
+      <Filter>Header File\State</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Header File\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Walk.h">
+      <Filter>Header File\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Wolf.h">
+      <Filter>Header File\Wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="WolfStateMachine.h">
+      <Filter>Header File\Wolf</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Fonts">
@@ -79,6 +97,15 @@
     </Filter>
     <Filter Include="Cpp File">
       <UniqueIdentifier>{ea52d2af-3c0b-4c20-b3ab-728628bf5ce6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header File\Miner">
+      <UniqueIdentifier>{a748d1ec-f191-44a0-b96f-21471f7a00f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header File\State">
+      <UniqueIdentifier>{97bbd551-2d54-4f53-8fd6-c387c7122874}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header File\Wolf">
+      <UniqueIdentifier>{7fe6f183-4fb2-4b6e-bad0-5a08f3c183b6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

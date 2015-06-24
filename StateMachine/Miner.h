@@ -31,7 +31,7 @@ public:
 	void Update();
 	void increaseStamina() { m_istamina++; };
 	void decreaseStamina() { m_istamina--; };
-	void decreaseKlm() { m_iklm--;  };
+	//void decreaseKlm() { m_iklm--;  };
 	
 	MinerStateMachine* getStateMachine() { return m_pMinerStateMachine; };
 	SteeringBehaviors* getSteeringBehavior() { return m_pSteeringBehaviors; };
@@ -43,15 +43,15 @@ public:
 	location_type getFromLocation() { return m_efromLocation; };
 	void setFromLocation(location_type newLocation) { m_efromLocation = newLocation; };
 
-	int getKlm() { return m_iklm; }
+	/*int getKlm() { return m_iklm; }
 	void resetKlm() { m_iklm = 3000; }
-	
+	*/
 private:
 	MinerStateMachine* m_pMinerStateMachine;
 	SteeringBehaviors* m_pSteeringBehaviors;
 	location_type m_eLocation,m_efromLocation;
 	int m_istamina;
-	int m_iklm;
+	//int m_iklm;
 
 	SMnamespace::Vector2 m_minerPos{ positionHome.x, positionHome.y };
 	SMnamespace::Vector2 m_minerVel{ 1, 1 };

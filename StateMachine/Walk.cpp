@@ -11,34 +11,38 @@ State<Miner>& Walk::getWInstance()
 
 void Walk::Enter(Miner* miner){
 	std::cout << "WALKING START" << std::endl;
-	miner->resetKlm();
+	//miner->resetKlm();
 	miner->setFromLocation(miner->getLocation());
 	miner->setLocation(walking);
-	if (miner->getFromLocation() == home)
+	
+	//la faccio nella exit 
+	/*if (miner->getFromLocation() == home)
 	{
 		miner->getSteeringBehavior()->SetTarget(positionMine);
 	}
 	else
 	{
 		miner->getSteeringBehavior()->SetTarget(positionHome);
-	}
-	miner->getSteeringBehavior()->SeekOn();
+	}*/
+	//miner->getSteeringBehavior()->SeekOn();
 	miner->getSteeringBehavior()->ArriveOn();
 }
 
 void Walk::Execute(Miner* miner){
-	miner->decreaseKlm();
-	std::cout 
-		<< "KM : " << miner->getKlm() 
-		<< "  Pos : " << miner->getPosition().x << " , " << miner->getPosition().y 
-		<< "  Vel : " << miner->getVelocity().x << " , " << miner->getVelocity().y
-		<< "  Acc : " << miner->getAcceleration().x << " , " << miner->getAcceleration().y
-		<< std::endl;
-	
+	//miner->decreaseKlm();
 	
 	SMnamespace::Vector2 distToTarget = miner->getSteeringBehavior()->GetTarget() - miner->getPosition();
 	float distance = distToTarget.Length();
-	if (distance <= 0) { 
+
+	std::cout
+		<< "distance : " << distance
+		//<< "KM : " << miner->getKlm()
+		<< "  Pos : " << miner->getPosition().x << " , " << miner->getPosition().y
+		<< "  Vel : " << miner->getVelocity().x << " , " << miner->getVelocity().y
+		<< "  Acc : " << miner->getAcceleration().x << " , " << miner->getAcceleration().y
+		<< std::endl;
+
+	if (distance <= 1) { 
 		if (miner->getFromLocation() == home)
 		{
 			miner->getStateMachine()->ChangeState(&Mining::getMInstance());
@@ -62,7 +66,7 @@ void Walk::Execute(Miner* miner){
 
 void Walk::Exit(Miner* miner){
 	std::cout << "WALKING END" << std::endl;
-	miner->getSteeringBehavior()->SeekOff();
+	//miner->getSteeringBehavior()->SeekOff();
 	miner->getSteeringBehavior()->ArriveOff();
 }
 

@@ -13,10 +13,14 @@ public:
 	GraphicsMove(){};
 	~GraphicsMove();
 
-	void Initialize(SMnamespace::Vector2);
-	void Draw(Miner &miner);
+	void Initialize();
 	
+	// deprecato
+	//void Draw( Miner &miner );	
+	void Draw();
 	void addActor(Miner *agent);
+
+	void UpdateAgent();
 private:
 	sf::Font font;
 	//sf::Text textIdle, textWalk, textMining, textCurrentState;

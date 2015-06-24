@@ -32,7 +32,7 @@ void SteeringBehaviors::SumForces()
 SMnamespace::Vector2 SteeringBehaviors::Seek(const SMnamespace::Vector2& target)
 {
 	SMnamespace::Vector2 desiredVelocity, force;
-	float stopRadius = 10.0f;
+	float stopRadius = 0.1f;
 	desiredVelocity = target - m_agent->getPosition();
 	if (desiredVelocity.Length() < stopRadius){ return SMnamespace::Vector2::ZERO; }
 	desiredVelocity = desiredVelocity.NormalizeCopy();
@@ -56,7 +56,7 @@ SMnamespace::Vector2 SteeringBehaviors::Arrive(const SMnamespace::Vector2& targe
 {
 	SMnamespace::Vector2 desiredVelocity, force;
 	float slowRadius = 100.0f;
-	float stopRadius = 10.0f;
+	float stopRadius = 0.1f;
 	desiredVelocity = target - m_agent->getPosition();
 	float distance = desiredVelocity.Length(); 
 	std::cout << " DISTANZA : " << distance << std::endl;
@@ -64,7 +64,7 @@ SMnamespace::Vector2 SteeringBehaviors::Arrive(const SMnamespace::Vector2& targe
 
 	if (distance < slowRadius)
 	{
-		if (distance < stopRadius) { return SMnamespace::Vector2::ZERO - m_agent->getVelocity(); }
+		if (distance < stopRadius) { return SMnamespace::Vector2::ZERO; }
 		float m = (distance / slowRadius) ;
 		std::cout << " DISTANZA M : " << m << std::endl;
 		desiredVelocity *= m;

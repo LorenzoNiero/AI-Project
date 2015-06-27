@@ -33,13 +33,24 @@ public:
 
 	inline void SeekOn()				{ m_iFlags |= seek; }
 	inline void ArriveOn()				{ m_iFlags |= arrive; }
+
 	inline void FleeOn()				{ m_iFlags |= flee; }
+	
+	//insegui qualcuno
 	inline void PursuitOn()				{ m_iFlags |= pursuit; }
+
+	//fuga
 	inline void EvadeOn()				{ m_iFlags |= evade; }
+
+	// cazzeggio
 	inline void WanderOn()				{ m_iFlags |= wander; }
+
+	//
 	inline void ObstacleAvoidanceOn()	{ m_iFlags |= obstaclesAvoidance; }
 	inline void WallAvoidanceOn()		{ m_iFlags |= wallAvoidance; }
 	inline void InterposeOn()			{ m_iFlags |= interpose; }
+	
+	//per le pecore
 	inline void SeparationOn()			{ m_iFlags |= separation; }
 	inline void CohesionOn()			{ m_iFlags |= cohesion; }
 	inline void AlignmentOn()			{ m_iFlags |= alignment; }

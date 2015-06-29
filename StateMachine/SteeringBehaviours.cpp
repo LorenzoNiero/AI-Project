@@ -148,19 +148,19 @@ SMnamespace::Vector2 SteeringBehaviors::Wander()
 //{
 //	return;
 //}
-//
-////group
-//Vector2 SteeringBehaviors::Separation(const std::vector<Agent*>& neighbors)
-//{
-//	return;
-//}
-//
-//Vector2 SteeringBehaviors::Cohesion(const std::vector<Agent*>& neighbors)
-//{
-//	return;
-//}
-//
-//Vector2 SteeringBehaviors::Alignment(const Vector2& target)
-//{
-//	return;
-//}
+
+//group
+SMnamespace::Vector2 SteeringBehaviors::Separation(const std::vector<Agent*>& neighbors)
+{
+	return SMnamespace::Vector2::ZERO;
+}
+
+SMnamespace::Vector2 SteeringBehaviors::Cohesion(const std::vector<Agent*>& neighbors)
+{
+	return SMnamespace::Vector2::ZERO;
+}
+
+SMnamespace::Vector2 SteeringBehaviors::Alignment(const SMnamespace::Vector2& target)
+{
+	return SMnamespace::Vector2::ZERO;
+}

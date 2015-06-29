@@ -21,11 +21,11 @@ MinerScene::~MinerScene()
 
 void MinerScene::OnIdle()
 {
-	while (true){
+	//while (true){
 		gra.Draw(bob.getLocation());		
 		graMove.UpdateAgent(); // fa lupdate di tutti gli agent presenti
 		graMove.Draw();
-	}
+	//}
 }
 
 void MinerScene::OnDraw(sf::RenderWindow& renderWindow)

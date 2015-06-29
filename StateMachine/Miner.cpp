@@ -2,9 +2,7 @@
 
 Miner::Miner() {
 
-	
-
-	m_istamina = 0;
+	m_istamina = max_stamina;
 	m_eLocation = home;
 
 

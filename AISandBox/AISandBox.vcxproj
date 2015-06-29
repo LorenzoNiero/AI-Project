@@ -87,7 +87,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>$(SolutionDir)AIProgramming;$(SolutionDir)StateMachine;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Mattia\Master\SourceTree\AI-Project\Debug;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

@@ -17,7 +17,7 @@ void Idle::Enter(Miner* miner){
 void Idle::Execute(Miner* miner){
 	miner->increaseStamina();
 	std::cout << "STUP : " << miner->getStamina() << std::endl;
-	if (miner->getStamina() >= 2000) { 
+	if (miner->getStamina() >= max_stamina) { 
 		miner->getStateMachine()->ChangeState((State<Miner>*)&Walk::getWInstance());
 	}
 }

@@ -13,6 +13,7 @@
 const SMnamespace::Vector2 positionMine(750.0f, 50.0f);
 const SMnamespace::Vector2 positionHome(5.0f, 50.0f);
 
+const int max_stamina = 200;
 
 enum location_type{
 	home,

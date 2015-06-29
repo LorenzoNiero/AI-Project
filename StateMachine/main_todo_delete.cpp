@@ -1,7 +1,6 @@
 #include "Miner.h"
 #include "Graphic.h"
 #include "GraphicsMove.h"
-#include "Wolf1.h"
 #include "Wolf.h"
 
 int main() {
@@ -10,7 +9,7 @@ int main() {
 	Miner bob2;
 	Miner bob3;
 
-	Wolf wolf1;
+	//Wolf wolf1;
 	
 	Graphic gra;
 	gra.Initialize();

@@ -2,6 +2,7 @@
 #include "StateMachine.h"
 #include "Wolf.h"
 
+class Wolf;
 class WolfStateMachine : StateMachine < Wolf >
 {
 private:
@@ -24,7 +25,7 @@ public:
 	void SetPreviousState(State<Wolf>* s){ m_pPreviousState = s; }
 	State<Wolf>*  GetPreviousState() const{ return m_pPreviousState; }
 
-	void  Update() const;
+	virtual void  Update() const override;
 
 	void  ChangeState(State<Wolf>* pNewState);
 

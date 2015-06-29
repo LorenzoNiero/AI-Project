@@ -8,9 +8,9 @@ Wolf::Wolf() {
 	setAcceleration({ 0.5f, 0.5f });
 	setMaxVelocity(2.0f);
 
-	m_pWolfStateMachine = new WolfStateMachine(this);
-	State<Wolf>* m_pStartState = (State<Wolf>*)&Idle::getIInstance();
-	m_pMinerStateMachine->SetCurrentState(m_pStartState);
+	//m_pWolfStateMachine = new WolfStateMachine(this);
+	/*State<Wolf>* m_pStartState = (State<Wolf>*)&Idle::getIInstance();
+	m_pMinerStateMachine->SetCurrentState(m_pStartState);*/
 
 	m_pSteeringBehaviors = new SteeringBehaviors(this);
 
@@ -19,7 +19,7 @@ Wolf::Wolf() {
 
 void Wolf::Update()
 {
-	m_pWolfStateMachine->Update();
+	//m_pWolfStateMachine->Update();
 	m_pSteeringBehaviors->Calculate();
 	setVelocity(m_pSteeringBehaviors->GetForce());
 	setPosition(getPosition() + getVelocity());

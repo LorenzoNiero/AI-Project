@@ -4,16 +4,18 @@
 #include "WolfStateMachine.h"
 #include "SteeringBehaviors.h"
 
+class WolfStateMachine;
+
 class Wolf : public Agent
 {
 public:
 	Wolf();
 	~Wolf(){
-		delete m_pWolfStateMachine;
-		delete m_pSteeringBehaviors;
+		//delete m_pWolfStateMachine;
+		//delete m_pSteeringBehaviors;
 	};
 
-	void Update();
+	virtual void Update() override;
 	WolfStateMachine* getStateMachine() { return m_pWolfStateMachine; };
 	SteeringBehaviors* getSteeringBehavior() { return m_pSteeringBehaviors; };
 	

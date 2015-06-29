@@ -4,7 +4,14 @@
 MinerScene::MinerScene()
 {
 	gra.Initialize();
-	graMove.Initialize(bob.getPosition());
+	graMove.Initialize();
+
+	bob.setPosition(60.0f, 60.0f);
+	bob3.setPosition(40.0f, 50.0f);
+	
+	graMove.addActor(&bob);
+	graMove.addActor(&bob2);
+	graMove.addActor(&bob3);
 }
 
 MinerScene::~MinerScene()
@@ -15,11 +22,9 @@ MinerScene::~MinerScene()
 void MinerScene::OnIdle()
 {
 	while (true){
-		bob.Update();
-		gra.Draw(bob.getLocation());
-		graMove.Draw(bob);
-				
-		//graMove.Draw(bob.getLocation());
+		gra.Draw(bob.getLocation());		
+		graMove.UpdateAgent(); // fa lupdate di tutti gli agent presenti
+		graMove.Draw();
 	}
 }
 

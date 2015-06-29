@@ -20,8 +20,11 @@ public:
 	virtual void OnDraw(sf::RenderWindow& renderWindow);
 
 private:
-	Miner bob;
 	Graphic gra;
 	GraphicsMove graMove;
+
+	Miner bob;
+	Miner bob2;
+	Miner bob3;
 };
 

@@ -5,6 +5,7 @@
 #include "Miner.h"
 #include "Graphic.h"
 #include "GraphicsMove.h"
+#include "Wolf.h"
 
 using namespace SMnamespace;
 
@@ -22,6 +23,8 @@ public:
 private:
 	Graphic gra;
 	GraphicsMove graMove;
+	
+	Wolf wolf1;
 
 	Miner bob;
 	Miner bob2;

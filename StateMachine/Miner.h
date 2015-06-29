@@ -26,6 +26,7 @@ class Miner : public Agent {
 public:
 	Miner();
 	~Miner(){
+		if (m_pMinerStateMachine)
 		delete m_pMinerStateMachine;
 	};
 

@@ -5,10 +5,6 @@
 class Wolf;
 class WolfStateMachine : StateMachine < Wolf >
 {
-private:
-	State<Wolf>*   m_pCurrentState;
-	State<Wolf>*   m_pPreviousState;
-	Wolf* m_pCurrentAgent;
 
 public:
 	WolfStateMachine(Wolf* agent) :
@@ -27,11 +23,16 @@ public:
 
 	virtual void  Update() const override;
 
-	void  ChangeState(State<Wolf>* pNewState);
+	virtual void  ChangeState(State<Wolf>* pNewState) override;
 
 	void  RevertToPreviousState(){ ChangeState(m_pPreviousState); }
 
 	bool  isInState(const State<Wolf>& st) const { return true; };
+
+private:
+	State<Wolf>*   m_pCurrentState;
+	State<Wolf>*   m_pPreviousState;
+	Wolf* m_pCurrentAgent;
 
 };
 

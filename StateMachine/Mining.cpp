@@ -16,7 +16,7 @@ void Mining::Enter(Miner* miner){
 
 void Mining::Execute(Miner* miner){
 	miner->decreaseStamina();
-	std::cout << "STDW : " << miner->getStamina() << std::endl;
+	//std::cout << "STDW : " << miner->getStamina() << std::endl;
 	if (miner->getStamina() == 0) {
 		miner->getStateMachine()->ChangeState((State<Miner>*)&Walk::getWInstance());
 	}

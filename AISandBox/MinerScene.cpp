@@ -12,6 +12,7 @@ MinerScene::MinerScene()
 	graMove.addActor(&bob);
 	graMove.addActor(&bob2);
 	graMove.addActor(&bob3);
+	graMove.addActor(&wolf1);
 }
 
 MinerScene::~MinerScene()

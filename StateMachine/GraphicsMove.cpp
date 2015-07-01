@@ -2,7 +2,7 @@
 
 void GraphicsMove::Initialize() {
 
-	m_VectorAgent = new std::vector<Miner*>();
+	m_VectorAgent = new std::vector<Agent*>();
 	m_VectorCircle = new std::vector<sf::CircleShape *>();
 
 	circleHome.setRadius(20.f);
@@ -52,7 +52,7 @@ void GraphicsMove::Draw() {
 
 	for (int i = 0; i < m_VectorCircle->size(); i++)
 	{
-		Miner *tmp = m_VectorAgent->at(i);
+		Agent *tmp = m_VectorAgent->at(i);
 		sf::CircleShape *tmpCircle = m_VectorCircle->at(i);
 					
 		tmpCircle->setPosition(tmp->getPosition().x, tmp->getPosition().y);
@@ -64,7 +64,7 @@ void GraphicsMove::Draw() {
 
 }
 
-void GraphicsMove::addActor(Miner *agent)
+void GraphicsMove::addActor(Agent *agent)
 {
 	m_VectorAgent->push_back( agent );
 
@@ -82,7 +82,7 @@ void GraphicsMove::UpdateAgent()
 
 	for (int i = 0; i < m_VectorAgent->size(); i++)
 	{
-		Miner *tmp = m_VectorAgent->at(i);
+		Agent *tmp = m_VectorAgent->at(i);
 		tmp->Update();
 		
 	}

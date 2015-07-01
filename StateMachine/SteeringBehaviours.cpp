@@ -152,7 +152,7 @@ SMnamespace::Vector2 SteeringBehaviors::Wander()
 //group
 SMnamespace::Vector2 SteeringBehaviors::Separation(const std::vector<Agent*>& neighbors)
 {
-	float desiredseparation = r * 2;
+	float desiredseparation = m_agent->getCircleRadius() * 2;
 	float fDist;
 	int i;
 	int iCount = 0;

@@ -6,7 +6,7 @@ void SteeringBehaviors::Calculate()
 	SumForces();
 	//m_steering += m_agent->getVelocity();
 	m_steering.Truncate(m_agent->getMaxVelocity());
-	std::cout << "    STEERING   :  " << m_steering.x << " , " << m_steering.y << std::endl;
+	//std::cout << "    STEERING   :  " << m_steering.x << " , " << m_steering.y << std::endl;
 }
 
 //sommare i comportamenti; evade, wander oppure seek, pursuit
@@ -59,14 +59,14 @@ SMnamespace::Vector2 SteeringBehaviors::Arrive(const SMnamespace::Vector2& targe
 	float stopRadius = 0.1f;
 	desiredVelocity = target - m_agent->getPosition();
 	float distance = desiredVelocity.Length(); 
-	std::cout << " DISTANZA : " << distance << std::endl;
+	//std::cout << " DISTANZA : " << distance << std::endl;
 	desiredVelocity=desiredVelocity.NormalizeCopy();
 
 	if (distance < slowRadius)
 	{
 		if (distance < stopRadius) { return SMnamespace::Vector2::ZERO; }
 		float m = (distance / slowRadius) ;
-		std::cout << " DISTANZA M : " << m << std::endl;
+		//std::cout << " DISTANZA M : " << m << std::endl;
 		desiredVelocity *= m;
 	}
 	else 

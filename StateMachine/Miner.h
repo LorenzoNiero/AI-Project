@@ -30,7 +30,7 @@ public:
 		delete m_pMinerStateMachine;
 	};
 
-	void Update();
+	virtual void Update() override;
 	void increaseStamina() { m_istamina++; };
 	void decreaseStamina() { m_istamina--; };
 	//void decreaseKlm() { m_iklm--;  };

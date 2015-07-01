@@ -2,6 +2,7 @@
 #include "State.h"
 #include "Miner.h"
 #include "Walk.h"
+#include "Wolf.h"
 
 class Miner;
 class Idle : State<Miner>{

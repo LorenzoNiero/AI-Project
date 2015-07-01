@@ -40,6 +40,9 @@
     <ClCompile Include="WolfStateMachine.cpp">
       <Filter>Cpp File</Filter>
     </ClCompile>
+    <ClCompile Include="Wander.cpp">
+      <Filter>Cpp File</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h">
@@ -86,6 +89,9 @@
     </ClInclude>
     <ClInclude Include="WolfStateMachine.h">
       <Filter>Header File\Wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="Wander.h">
+      <Filter>Header File\State</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

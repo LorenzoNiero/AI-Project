@@ -86,6 +86,7 @@
     <ClCompile Include="SteeringBehaviours.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Walk.cpp" />
+    <ClCompile Include="Wander.cpp" />
     <ClCompile Include="Wolf.cpp" />
     <ClCompile Include="WolfStateMachine.cpp" />
   </ItemGroup>
@@ -103,6 +104,7 @@
     <ClInclude Include="SteeringBehaviors.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Walk.h" />
+    <ClInclude Include="Wander.h" />
     <ClInclude Include="Wolf.h" />
     <ClInclude Include="WolfStateMachine.h" />
   </ItemGroup>

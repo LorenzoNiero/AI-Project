@@ -18,14 +18,14 @@ public:
 	// deprecato
 	//void Draw( Miner &miner );	
 	void Draw();
-	void addActor(Miner *agent);
+	void addActor(Agent *agent);
 
 	void UpdateAgent();
 private:
 	sf::Font font;
 	//sf::Text textIdle, textWalk, textMining, textCurrentState;
 	//sf::CircleShape circleIdle, circleWalk, circleMining, circleCurrentState;
-	std::vector<Miner*> *m_VectorAgent;
+	std::vector<Agent*> *m_VectorAgent;
 	std::vector<sf::CircleShape *> *m_VectorCircle;
 	sf::Color color;
 	sf::RenderWindow window;

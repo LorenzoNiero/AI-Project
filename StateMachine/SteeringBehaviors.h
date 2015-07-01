@@ -25,8 +25,8 @@ public:
 	void SetNeighbors(std::vector<Agent*> nNeighbors) { m_neighbors = nNeighbors; }
 	void SetObstacles(std::vector<Place*> nObstacles) { m_obstacles = nObstacles; }
 
-	
 	SMnamespace::Vector2 GetForce()const { return m_steering; }
+	SMnamespace::Vector2 StayWithinWalls();
 
 	void Calculate();
 
@@ -41,10 +41,10 @@ public:
 	//fuga
 	inline void EvadeOn()				{ m_iFlags |= evade; }
 
-	// cazzeggio
+	//girare a caso
 	inline void WanderOn()				{ m_iFlags |= wander; }
 
-	//
+	//TO DO: not implement
 	inline void ObstacleAvoidanceOn()	{ m_iFlags |= obstaclesAvoidance; }
 	inline void WallAvoidanceOn()		{ m_iFlags |= wallAvoidance; }
 	inline void InterposeOn()			{ m_iFlags |= interpose; }
@@ -79,7 +79,6 @@ public:
 	inline bool SeparationIsOn()		{ return On(separation); }
 	inline bool CohesionIsOn()			{ return On(cohesion); }
 	inline bool AlignmentIsOn()			{ return On(alignment); }
-
 
 private:
 	

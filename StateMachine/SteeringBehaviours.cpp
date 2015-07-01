@@ -132,7 +132,7 @@ SMnamespace::Vector2 SteeringBehaviors::Wander()
 	return wanderForce;
 }
 
-//TO DO: da non implementare
+//TO DO: not implement
 //obstacle
 //Vector2 SteeringBehaviors::ObstacleAvoidance()
 //{
@@ -243,5 +243,21 @@ SMnamespace::Vector2 SteeringBehaviors::Alignment(const std::vector<Agent*>& nei
 		return vSteer;
 	}
 	
+	return SMnamespace::Vector2::ZERO;
+}
+
+SMnamespace::Vector2 SteeringBehaviors::StayWithinWalls()
+{
+
+	//sposta if nel metodo che invoca per evitare chiamate se non serve
+	if (m_agent->getPosition().x > 25) 
+	{
+		SMnamespace::Vector2 vDesired = { m_agent->getMaxVelocity(), m_agent->getVelocity().y };
+		SMnamespace::Vector2 vSteer = SMnamespace::Vector2{ vDesired - m_agent->getVelocity() };
+		vSteer.Truncate(m_agent->getMaxVelocity());
+		return vSteer;
+	}
+
+	//da togliere una volta rimosso l'if
 	return SMnamespace::Vector2::ZERO;
 }

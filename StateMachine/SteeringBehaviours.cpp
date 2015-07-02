@@ -168,6 +168,7 @@ SMnamespace::Vector2 SteeringBehaviors::Wander()
 	//return wanderForce;
 }
 
+
 void SteeringBehaviors::setAngle(SMnamespace::Vector2 &vect, float angle){
 	SMnamespace::Vector2 pos;
 	pos.x = cos(angle) * vect.Length();
@@ -176,7 +177,7 @@ void SteeringBehaviors::setAngle(SMnamespace::Vector2 &vect, float angle){
 }
 
 
-//TO DO: da non implementare
+//TO DO: not implement
 //obstacle
 //Vector2 SteeringBehaviors::ObstacleAvoidance()
 //{
@@ -196,15 +197,112 @@ void SteeringBehaviors::setAngle(SMnamespace::Vector2 &vect, float angle){
 //group
 SMnamespace::Vector2 SteeringBehaviors::Separation(const std::vector<Agent*>& neighbors)
 {
+	float desiredseparation = m_agent->getCircleRadius() * 2;
+	float fDist;
+	int i;
+	int iCount = 0;
+	SMnamespace::Vector2 vResult = SMnamespace::Vector2::ZERO;
+	SMnamespace::Vector2 vDist;
+	SMnamespace::Vector2 vSteer;
+
+	for (i = 0; i < neighbors.size(); ++i)
+	{
+		vDist = m_agent->getPosition() - neighbors.at(i)->getPosition();
+		fDist = vDist.Length();
+		if ((fDist > 0) && (fDist < desiredseparation)) {
+			vDist.Normalize();
+			vDist = vDist / fDist;
+			vResult += vDist;
+			++iCount;
+		}
+	}
+	if (iCount > 0)
+	{
+		vResult = vResult / iCount;
+		vResult.Normalize();
+
+		vResult = vResult * m_agent->getMaxVelocity();
+		vSteer = vResult - m_agent->getVelocity();
+		vSteer.Truncate(m_agent->getMaxVelocity()); //steer.limit(maxforce);
+		return vSteer;
+	}
+
 	return SMnamespace::Vector2::ZERO;
 }
 
 SMnamespace::Vector2 SteeringBehaviors::Cohesion(const std::vector<Agent*>& neighbors)
 {
+	float fNeighbordist = 50;
+	float fDist;
+	int i;
+	int iCount = 0;
+	SMnamespace::Vector2 vResult = SMnamespace::Vector2::ZERO;
+	SMnamespace::Vector2 vDist;
+
+	for (i = 0; i < neighbors.size(); ++i)
+	{
+		vDist = m_agent->getPosition() - neighbors.at(i)->getPosition();
+		fDist = vDist.Length();
+		if ((fDist > 0) && (fDist < fNeighbordist))
+		{
+			vResult += neighbors.at(i)->getPosition();
+			++iCount;
+		}
+	}
+	if (iCount > 0)
+	{
+		vResult = vResult / iCount;
+		return SteeringBehaviors::Seek(vResult);
+	}
+
 	return SMnamespace::Vector2::ZERO;
 }
 
-SMnamespace::Vector2 SteeringBehaviors::Alignment(const SMnamespace::Vector2& target)
+SMnamespace::Vector2 SteeringBehaviors::Alignment(const std::vector<Agent*>& neighbors)
 {
+	float fNeighbordist = 50;
+	float fDist;
+	int i;
+	int iCount = 0;
+	SMnamespace::Vector2 vResult = SMnamespace::Vector2::ZERO;
+	SMnamespace::Vector2 vDist;
+	SMnamespace::Vector2 vSteer;
+
+	for (i=0; i < neighbors.size(); ++i)
+	{
+		vDist = m_agent->getPosition() - neighbors.at(i)->getPosition();
+		fDist = vDist.Length();
+		if ((fDist > 0) && (fDist < fNeighbordist)) 
+		{
+			vResult += neighbors.at(i)->getVelocity();
+			++iCount;
+		}
+	}
+	if (iCount > 0)
+	{
+		vResult = vResult / iCount;
+		vResult.Normalize();
+		vResult = vResult * m_agent->getMaxVelocity();
+		vSteer = vResult - m_agent->getVelocity();
+		vSteer.Truncate(m_agent->getMaxVelocity()); //steer.limit(maxforce);
+		return vSteer;
+	}
+	
+	return SMnamespace::Vector2::ZERO;
+}
+
+SMnamespace::Vector2 SteeringBehaviors::StayWithinWalls()
+{
+
+	//sposta if nel metodo che invoca per evitare chiamate se non serve
+	if (m_agent->getPosition().x > 25) 
+	{
+		SMnamespace::Vector2 vDesired = { m_agent->getMaxVelocity(), m_agent->getVelocity().y };
+		SMnamespace::Vector2 vSteer = SMnamespace::Vector2{ vDesired - m_agent->getVelocity() };
+		vSteer.Truncate(m_agent->getMaxVelocity());
+		return vSteer;
+	}
+
+	//da togliere una volta rimosso l'if
 	return SMnamespace::Vector2::ZERO;
 }

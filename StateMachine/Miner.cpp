@@ -17,8 +17,6 @@ Miner::Miner() {
 	m_pMinerStateMachine->SetCurrentState(m_pStartState);
 
 	m_pSteeringBehaviors = new SteeringBehaviors(this);
-
-		
 }
 
 void Miner::Update()

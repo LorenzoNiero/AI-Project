@@ -9,14 +9,13 @@
 
 class Agent;
 class Place;
-
 class SteeringBehaviors
 {
 
 public:
 	SteeringBehaviors(Agent* bp) : m_agent(bp)	{ m_iFlags = 0; };
 
-	~SteeringBehaviors();
+	~SteeringBehaviors() {};
 
 	SMnamespace::Vector2 GetTarget()const{ return m_target; }
 	
@@ -26,8 +25,8 @@ public:
 	void SetNeighbors(std::vector<Agent*> nNeighbors) { m_neighbors = nNeighbors; }
 	void SetObstacles(std::vector<Place*> nObstacles) { m_obstacles = nObstacles; }
 
-	
 	SMnamespace::Vector2 GetForce()const { return m_steering; }
+	SMnamespace::Vector2 StayWithinWalls();
 
 	void Calculate();
 
@@ -42,10 +41,10 @@ public:
 	//fuga
 	inline void EvadeOn()				{ m_iFlags |= evade; }
 
-	// cazzeggio
+	//girare a caso
 	inline void WanderOn()				{ m_iFlags |= wander; }
 
-	//
+	//TO DO: not implement
 	inline void ObstacleAvoidanceOn()	{ m_iFlags |= obstaclesAvoidance; }
 	inline void WallAvoidanceOn()		{ m_iFlags |= wallAvoidance; }
 	inline void InterposeOn()			{ m_iFlags |= interpose; }
@@ -81,17 +80,16 @@ public:
 	inline bool CohesionIsOn()			{ return On(cohesion); }
 	inline bool AlignmentIsOn()			{ return On(alignment); }
 
-
 private:
 	
-	Agent*				m_agent;
-	Agent*				m_evader;
+	Agent*					m_agent;
+	Agent*					m_evader;
 
 	std::vector<Agent*>		m_neighbors;
 	std::vector<Place*>		m_obstacles;
 
-	SMnamespace::Vector2			m_steering;
-	SMnamespace::Vector2			m_target;
+	SMnamespace::Vector2	m_steering;
+	SMnamespace::Vector2	m_target;
 	
 	float			m_thetaValue;
 
@@ -132,7 +130,7 @@ private:
 	//group
 	SMnamespace::Vector2 Separation(const std::vector<Agent*>& neighbors);
 	SMnamespace::Vector2 Cohesion(const std::vector<Agent*>& neighbors);
-	SMnamespace::Vector2 Alignment(const SMnamespace::Vector2& target);
+	SMnamespace::Vector2 Alignment(const std::vector<Agent*>& neighbors);
 
 	void setAngle(SMnamespace::Vector2 &vect, float angle);
 

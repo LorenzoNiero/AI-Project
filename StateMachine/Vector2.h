@@ -12,6 +12,8 @@ namespace SMnamespace
 		static const Vector2 ZERO;
 		static const Vector2 X_VERSOR;
 		static const Vector2 Y_VERSOR;
+		float		x;
+		float		y;
 
 		Vector2()
 		{
@@ -23,9 +25,6 @@ namespace SMnamespace
 			this->x = x;
 			this->y = y;
 		}
-
-		float		x;
-		float		y;
 
 		inline Vector2&	operator+=(const Vector2& other)
 		{

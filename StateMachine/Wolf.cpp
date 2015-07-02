@@ -2,11 +2,15 @@
 
 Wolf::Wolf() {
 
-	setPosition({ 100.0f, 150.0f });
-	//setVelocity({ 0.5f, 0.5f }); // non dovrebbe avere una base di velocità, dovrebbe essere 0
-
+	setPosition({ 200.0f, 250.0f });
+	setVelocity({ 0.5f, 0.5f }); // non dovrebbe avere una base di velocità, dovrebbe essere 0
+	
 	setAcceleration({ 0.5f, 0.5f });
 	setMaxVelocity(2.0f);
+
+	setCircleRadius(10);
+	setCircleDistance(2);
+	setAngleChange(30);
 
 	m_pWolfStateMachine = new WolfStateMachine(this);
 	State<Wolf>* m_pStartState = (State<Wolf>*)&Wander::getIInstance();
@@ -37,5 +41,9 @@ void Wolf::Update()
 	m_pSteeringBehaviors->Calculate();
 	setVelocity(m_pSteeringBehaviors->GetForce());
 	setPosition(getPosition() + getVelocity());
+
+	/*setVelocity( (getVelocity() + m_pSteeringBehaviors->GetForce()));
+	m_vVelocity.Truncate(getMaxVelocity());
+	setPosition(getPosition() + getVelocity());*/
 }
 

@@ -32,7 +32,7 @@ public:
 	SMnamespace::Vector2 getAcceleration() const { return m_vAcceleration; }
 	void setAcceleration(SMnamespace::Vector2 val) { m_vAcceleration = val; }
 
-private :
+protected :
 	SMnamespace::Vector2 m_vPosition;
 	SMnamespace::Vector2 m_vVelocity;
 	SMnamespace::Vector2 m_vAcceleration;

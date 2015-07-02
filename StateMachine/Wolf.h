@@ -14,7 +14,7 @@ private:
 	SteeringBehaviors* m_pSteeringBehaviors;
 
 	SMnamespace::Vector2 m_wolfPos{ 50, 50 };
-	SMnamespace::Vector2 m_wolfVel{ 1, -1 };
+	
 
 
 public:

@@ -17,7 +17,7 @@ void Wander::Enter(Wolf* wolf){
 
 void Wander::Execute(Wolf* wolf){
 	
-	std::cout << "Update Cane execute " << std::endl;
+	//std::cout << "Update Cane execute " << std::endl;
 
 }
 

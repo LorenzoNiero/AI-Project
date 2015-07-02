@@ -124,7 +124,7 @@ private:
 	SMnamespace::Vector2 Arrive(const SMnamespace::Vector2& target);
 	SMnamespace::Vector2 Pursuit(const Agent* target);
 	SMnamespace::Vector2 Evade(const Agent* target);
-	SMnamespace::Vector2 Wander();
+	SMnamespace::Vector2 Wander();	
 	SMnamespace::Vector2 ObstacleAvoidance();
 	SMnamespace::Vector2 WallAvoidance(const SMnamespace::Vector2& target);
 	SMnamespace::Vector2 Interpose(const SMnamespace::Vector2& target);
@@ -133,6 +133,8 @@ private:
 	SMnamespace::Vector2 Separation(const std::vector<Agent*>& neighbors);
 	SMnamespace::Vector2 Cohesion(const std::vector<Agent*>& neighbors);
 	SMnamespace::Vector2 Alignment(const SMnamespace::Vector2& target);
+
+	void setAngle(SMnamespace::Vector2 &vect, float angle);
 
 };
 

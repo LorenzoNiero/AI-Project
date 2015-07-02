@@ -6,6 +6,7 @@ void SteeringBehaviors::Calculate()
 	SumForces();
 	//m_steering += m_agent->getVelocity();
 	m_steering.Truncate(m_agent->getMaxVelocity());
+	
 	//std::cout << "    STEERING   :  " << m_steering.x << " , " << m_steering.y << std::endl;
 }
 
@@ -110,27 +111,70 @@ SMnamespace::Vector2 SteeringBehaviors::Evade(const Agent* target)
 
 SMnamespace::Vector2 SteeringBehaviors::Wander()
 {
-	SMnamespace::Vector2 circleCenter, desiredVelocity, wanderForce;
-	SMnamespace::Vector2 displacement = { 0, -1 };
-	float wanderAngle = 0;
-
+	static float wanderAngle = 0;
+	// Calculate the circle center
+	SMnamespace::Vector2 circleCenter, wanderForce;
 	circleCenter = m_agent->getVelocity();
-	desiredVelocity = circleCenter.NormalizeCopy() * m_agent->getCircleDistance();
-
-	desiredVelocity = displacement.NormalizeCopy() * m_agent->getCircleRadius();
-
-	//set angle, randomly change the vector direction by making it change its current angle
-	SMnamespace::Vector2 pos;
-	pos.x = cos(wanderAngle) * displacement.Length();
-	pos.y = sin(wanderAngle) * displacement.Length();
-	m_agent->setPosition(pos);
+	circleCenter.Normalize();
 	
+	//circleCenter.scaleBy(CIRCLE_DISTANCE);
+	//
+	// Calculate the displacement force
+	SMnamespace::Vector2 displacement = { 0, -1 };
+	//displacement = new Vector3D(0, -1);
+	//displacement.scaleBy(CIRCLE_RADIUS);
+	//
+	// Randomly change the vector direction
+	// by making it change its current angle
+	setAngle(displacement, wanderAngle);
+	//
+	// Change wanderAngle just a bit, so it
+	// won't have the same value in the
+	// next game frame.
 	wanderAngle += rand() * m_agent->getAngleChange() - m_agent->getAngleChange() * 0.5f;
-
+	std::cout << "" << wanderAngle << std::endl;
+	//
+	// Finally calculate and return the wander force
+	/*var wanderForce : Vector3D;
+	wanderForce = circleCenter.add(displacement);
+	return wanderForce;*/
 	wanderForce = circleCenter + displacement;
-	
+
 	return wanderForce;
+	
+	
+	//SMnamespace::Vector2 circleCenter, desiredVelocity, wanderForce;
+	//SMnamespace::Vector2 displacement = { 0, -1 };
+	//static float wanderAngle =0;
+
+	//circleCenter = m_agent->getVelocity();
+	//
+	//desiredVelocity = circleCenter.NormalizeCopy() *m_agent->getCircleDistance();
+	//
+	//desiredVelocity = displacement.NormalizeCopy() * m_agent->getCircleRadius();
+	//std::cout << "" << desiredVelocity.x << "  " << desiredVelocity.y << std::endl;
+	////set angle, randomly change the vector direction by making it change its current angle
+	////SMnamespace::Vector2 pos = displacement;
+	////pos.x = cos(wanderAngle) * displacement.Length();
+	////pos.y = sin(wanderAngle) * displacement.Length();
+	//////m_agent->setPosition(pos);
+	////displacement = pos;
+	//setAngle(displacement, wanderAngle);
+	//
+	//wanderAngle += rand() * m_agent->getAngleChange() - m_agent->getAngleChange() * 0.5f;
+
+	//wanderForce = circleCenter + displacement;
+	//
+	//return wanderForce;
 }
+
+void SteeringBehaviors::setAngle(SMnamespace::Vector2 &vect, float angle){
+	SMnamespace::Vector2 pos;
+	pos.x = cos(angle) * vect.Length();
+	pos.y = sin(angle) * vect.Length();
+	vect = pos;
+}
+
 
 //TO DO: da non implementare
 //obstacle

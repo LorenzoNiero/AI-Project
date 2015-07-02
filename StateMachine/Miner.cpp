@@ -27,4 +27,8 @@ void Miner::Update()
 	m_pSteeringBehaviors->Calculate();
 	setVelocity(m_pSteeringBehaviors->GetForce());
 	setPosition(getPosition()+getVelocity());
+
+	/*setVelocity((getVelocity() + m_pSteeringBehaviors->GetForce()));
+	m_vVelocity.Truncate(getMaxVelocity());
+	setPosition(getPosition() + getVelocity());*/
 }

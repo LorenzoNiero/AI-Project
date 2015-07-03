@@ -13,18 +13,13 @@ public:
 	GraphicsMove(){};
 	~GraphicsMove();
 
-	void Initialize();
-	
-	// deprecato
-	//void Draw( Miner &miner );	
+	void Initialize();	
 	void Draw();
 	void addActor(Agent *agent);
 
 	void UpdateAgent();
 private:
 	sf::Font font;
-	//sf::Text textIdle, textWalk, textMining, textCurrentState;
-	//sf::CircleShape circleIdle, circleWalk, circleMining, circleCurrentState;
 	std::vector<Agent*> *m_VectorAgent;
 	std::vector<sf::CircleShape *> *m_VectorCircle;
 	sf::Color color;
@@ -36,11 +31,13 @@ private:
 
 	sf::Texture texGnomo;
 	sf::Texture texCane;
+	sf::Texture texSheep;
 	sf::Texture texMiniera;
 	sf::Texture texCasa;
 
 	sf::Sprite sprGnomo;
 	sf::Sprite sprCane;
+	sf::Sprite sprSheep;
 	sf::Sprite sprMiniera;
 	sf::Sprite sprCasa;
 };

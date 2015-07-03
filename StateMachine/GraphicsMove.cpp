@@ -5,14 +5,6 @@ void GraphicsMove::Initialize() {
 	m_VectorAgent = new std::vector<Agent*>();
 	m_VectorCircle = new std::vector<sf::CircleShape *>();
 
-	circleHome.setRadius(20.f);
-	circleHome.setFillColor(color.Yellow);
-	circleHome.setPosition(positionHome.x, positionHome.y);
-
-	circleMine.setRadius(20.f);
-	circleMine.setFillColor(color.Yellow);
-	circleMine.setPosition(positionMine.x, positionMine.y);
-		
 	window.create(sf::VideoMode(800, 600), "FSM Miner at Work!");
 
 	if (!texGnomo.loadFromFile("../StateMachine/Sprites/gnomo.png"))
@@ -23,6 +15,10 @@ void GraphicsMove::Initialize() {
 	{
 		// error...
 	}
+	if (!texSheep.loadFromFile("../StateMachine/Sprites/sheep.png"))
+	{
+		// error...
+	}
 	if (!texMiniera.loadFromFile("../StateMachine/Sprites/miniera.png"))
 	{
 		// error...
@@ -30,35 +26,25 @@ void GraphicsMove::Initialize() {
 	if (!texCasa.loadFromFile("../StateMachine/Sprites/casa.png"))
 	{
 		// error...
-	}
-	sprGnomo.setTexture(texGnomo);
-	sprCane.setTexture(texCane);
-	sprMiniera.setTexture(texMiniera);
+	}	
+	
 	sprCasa.setTexture(texCasa);
 	sprCasa.setPosition((positionHome.x-10), (positionHome.y-50));
 	sprCasa.setScale(0.4,0.4);
-}
 
-//void GraphicsMove::Draw(Miner& miner) {
-//
-//	sf::Event event;
-//	while (window.pollEvent(event))
-//	{
-//		if (event.type == sf::Event::Closed)
-//			window.close();
-//	}
-//
-//	window.clear();
-//	window.draw(circleHome);
-//	window.draw(circleMine);
-//
-//	minerCircle.setPosition(miner.getPosition().x, miner.getPosition().y);
-//
-//	window.draw(minerCircle);
-//	
-//	window.display();
-//
-//}
+	sprMiniera.setTexture(texMiniera);
+	sprMiniera.setPosition((positionMine.x-50), (positionMine.y-50));
+	sprMiniera.setScale(0.4, 0.4);
+
+	sprGnomo.setTexture(texGnomo);
+	sprGnomo.setScale(0.3, 0.3);
+
+	sprCane.setTexture(texCane);
+	sprCane.setScale(0.2, 0.2);
+
+	sprSheep.setTexture(texSheep);
+	sprSheep.setScale(0.4, 0.4);
+}
 
 void GraphicsMove::Draw() {
 
@@ -70,10 +56,8 @@ void GraphicsMove::Draw() {
 	}
 
 	window.clear();
-	//window.draw(circleHome);
 	window.draw(sprCasa);
-
-	window.draw(circleMine);
+	window.draw(sprMiniera);
 
 	for (int i = 0; i < m_VectorCircle->size(); i++)
 	{
@@ -82,7 +66,21 @@ void GraphicsMove::Draw() {
 					
 		tmpCircle->setPosition(tmp->getPosition().x, tmp->getPosition().y);
 
-		window.draw(*tmpCircle);
+		if (tmp->GetAgentType() == GNOME)
+		{
+			sprGnomo.setPosition(tmpCircle->getPosition().x, tmpCircle->getPosition().y);
+			window.draw(sprGnomo);
+		}
+		else if (tmp->GetAgentType() == SHEEP)
+		{
+			sprSheep.setPosition(tmpCircle->getPosition().x, tmpCircle->getPosition().y);
+			window.draw(sprSheep);
+		}
+		else if (tmp->GetAgentType() == DOG)
+		{
+			sprCane.setPosition(tmpCircle->getPosition().x, tmpCircle->getPosition().y);
+			window.draw(sprCane);
+		}
 	}
 
 	window.display();
@@ -103,19 +101,18 @@ void GraphicsMove::addActor(Agent *agent)
 
 void GraphicsMove::UpdateAgent()
 {
-
 	for (int i = 0; i < m_VectorAgent->size(); i++)
 	{
 		Agent *tmp = m_VectorAgent->at(i);
 		tmp->Update();
 		
 	}
-
 }
 
 GraphicsMove::~GraphicsMove(){
 
-	for (int i = 0; i < m_VectorCircle->size(); i++) {
+	for (int i = 0; i < m_VectorCircle->size(); i++) 
+	{
 		delete m_VectorCircle->at(i);
 	}
 

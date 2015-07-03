@@ -3,8 +3,8 @@
 
 Sheep::Sheep()
 {
+	m_eAgentType = SHEEP;
 }
-
 
 Sheep::~Sheep()
 {

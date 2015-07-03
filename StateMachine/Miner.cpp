@@ -5,12 +5,13 @@ Miner::Miner() {
 	m_istamina = max_stamina;
 	m_eLocation = home;
 
-
 	setPosition({ 20.0f, 50.0f });
 	//setVelocity({ 0.5f, 0.5f }); // non dovrebbe avere una base di velocità, dovrebbe essere 0
 
 	setAcceleration({ 0.5f, 0.5f });
 	setMaxVelocity(2.0f);
+
+	m_eAgentType = GNOME;
 
 	m_pMinerStateMachine = new MinerStateMachine(this);
 	State<Miner>* m_pStartState = (State<Miner>*)&Idle::getIInstance();

@@ -1,15 +1,25 @@
 #pragma once
+
 #include "State.h"
 #include "Vector2.h"
 
-class Agent {
+enum type : int
+{
+	GNOME,
+	DOG,
+	SHEEP
+};
+
+class Agent 
+{
+
 public:
 	virtual ~Agent() {};
 	virtual void Update(){};
 
 	SMnamespace::Vector2 getPosition() const { return m_vPosition; }
 	void setPosition(SMnamespace::Vector2 val) { m_vPosition = val; }
-	void setPosition( float x, float y ) { 
+	void setPosition(float x, float y) {
 		m_vPosition.x = x;
 		m_vPosition.y = y;
 	}
@@ -32,7 +42,10 @@ public:
 	SMnamespace::Vector2 getAcceleration() const { return m_vAcceleration; }
 	void setAcceleration(SMnamespace::Vector2 val) { m_vAcceleration = val; }
 
-protected :
+	//void SetAgentType(int value){ m_eAgentType = value; };
+	int GetAgentType() const { return m_eAgentType; };
+
+protected:
 	SMnamespace::Vector2 m_vPosition;
 	SMnamespace::Vector2 m_vVelocity;
 	SMnamespace::Vector2 m_vAcceleration;
@@ -40,4 +53,6 @@ protected :
 	float m_fCircleRadius;
 	float m_fAngleChange;
 	float m_fMaxVelocity;
+
+	type m_eAgentType;
 };

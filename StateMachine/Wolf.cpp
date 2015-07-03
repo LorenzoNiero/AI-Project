@@ -12,6 +12,7 @@ Wolf::Wolf() {
 	setCircleDistance(6);
 	setAngleChange(1);
 	
+	m_eAgentType = DOG;
 
 	m_pWolfStateMachine = new WolfStateMachine(this);
 	State<Wolf>* m_pStartState = (State<Wolf>*)&Wander::getIInstance();

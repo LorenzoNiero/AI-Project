@@ -6,11 +6,12 @@ Wolf::Wolf() {
 	setVelocity({ 0.5f, 0.5f }); // non dovrebbe avere una base di velocità, dovrebbe essere 0
 	
 	setAcceleration({ 0.5f, 0.5f });
-	setMaxVelocity(2.0f);
+	setMaxVelocity(1.5f);
 
-	setCircleRadius(10);
-	setCircleDistance(2);
-	setAngleChange(30);
+	setCircleRadius(8);
+	setCircleDistance(6);
+	setAngleChange(1);
+	
 
 	m_pWolfStateMachine = new WolfStateMachine(this);
 	State<Wolf>* m_pStartState = (State<Wolf>*)&Wander::getIInstance();

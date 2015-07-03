@@ -15,7 +15,7 @@ private:
 
 	SMnamespace::Vector2 m_wolfPos{ 50, 50 };
 	
-
+	//static SMnamespace::Vector2  
 
 public:
 	Wolf();

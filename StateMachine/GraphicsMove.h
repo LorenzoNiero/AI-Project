@@ -34,4 +34,13 @@ private:
 	sf::CircleShape circleHome;
 	sf::CircleShape circleMine;
 
+	sf::Texture texGnomo;
+	sf::Texture texCane;
+	sf::Texture texMiniera;
+	sf::Texture texCasa;
+
+	sf::Sprite sprGnomo;
+	sf::Sprite sprCane;
+	sf::Sprite sprMiniera;
+	sf::Sprite sprCasa;
 };

@@ -14,6 +14,29 @@ void GraphicsMove::Initialize() {
 	circleMine.setPosition(positionMine.x, positionMine.y);
 		
 	window.create(sf::VideoMode(800, 600), "FSM Miner at Work!");
+
+	if (!texGnomo.loadFromFile("../StateMachine/Sprites/gnomo.png"))
+	{
+		// error...
+	}
+	if (!texCane.loadFromFile("../StateMachine/Sprites/cane.png"))
+	{
+		// error...
+	}
+	if (!texMiniera.loadFromFile("../StateMachine/Sprites/miniera.png"))
+	{
+		// error...
+	}
+	if (!texCasa.loadFromFile("../StateMachine/Sprites/casa.png"))
+	{
+		// error...
+	}
+	sprGnomo.setTexture(texGnomo);
+	sprCane.setTexture(texCane);
+	sprMiniera.setTexture(texMiniera);
+	sprCasa.setTexture(texCasa);
+	sprCasa.setPosition((positionHome.x-10), (positionHome.y-50));
+	sprCasa.setScale(0.4,0.4);
 }
 
 //void GraphicsMove::Draw(Miner& miner) {
@@ -47,7 +70,9 @@ void GraphicsMove::Draw() {
 	}
 
 	window.clear();
-	window.draw(circleHome);
+	//window.draw(circleHome);
+	window.draw(sprCasa);
+
 	window.draw(circleMine);
 
 	for (int i = 0; i < m_VectorCircle->size(); i++)
@@ -61,7 +86,6 @@ void GraphicsMove::Draw() {
 	}
 
 	window.display();
-
 }
 
 void GraphicsMove::addActor(Agent *agent)

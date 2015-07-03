@@ -44,6 +44,20 @@ void GraphicsMove::Initialize() {
 
 	sprSheep.setTexture(texSheep);
 	sprSheep.setScale(0.4, 0.4);
+
+	//circleEnclosure.setPosition(0, 0);
+	
+	circleEnclosure.setRadius(radiusEnclosure);
+	circleEnclosure.setOrigin(radiusEnclosure, radiusEnclosure);
+	circleEnclosure.setFillColor(color.Blue);
+	//circleEnclosure.setPosition(0, 0);
+	circleEnclosure.setPosition(enclosureCenter.x , enclosureCenter.y);
+
+	circleLimitWolf.setRadius(LimitDistanceWolf);
+	circleLimitWolf.setOrigin(LimitDistanceWolf, LimitDistanceWolf);
+	circleLimitWolf.setFillColor(color.Cyan);
+	//circleLimitWolf.setPosition(0,0);
+	circleLimitWolf.setPosition(enclosureCenter.x , enclosureCenter.y  );
 }
 
 void GraphicsMove::Draw() {
@@ -58,6 +72,9 @@ void GraphicsMove::Draw() {
 	window.clear();
 	window.draw(sprCasa);
 	window.draw(sprMiniera);
+	window.draw(circleLimitWolf);
+	window.draw(circleEnclosure);
+	
 
 	for (int i = 0; i < m_VectorCircle->size(); i++)
 	{

@@ -2,7 +2,8 @@
 
 Wolf::Wolf() {
 
-	setPosition({ 200.0f, 250.0f });
+	//setPosition({ 0, 0 });
+	setPosition({ enclosureCenter.x + radiusEnclosure + 5, enclosureCenter.y   });
 	setVelocity({ 0.5f, 0.5f }); // non dovrebbe avere una base di velocità, dovrebbe essere 0
 	
 	setAcceleration({ 0.5f, 0.5f });
@@ -10,7 +11,7 @@ Wolf::Wolf() {
 
 	setCircleRadius(8);
 	setCircleDistance(6);
-	setAngleChange(1);
+	setAngleChange(2);
 	
 	m_eAgentType = DOG;
 

@@ -132,7 +132,7 @@ SMnamespace::Vector2 SteeringBehaviors::Wander()
 	// won't have the same value in the
 	// next game frame.
 	wanderAngle += rand() * m_agent->getAngleChange() - m_agent->getAngleChange() * 0.5f;
-	std::cout << "" << wanderAngle << std::endl;
+	//std::cout << "" << wanderAngle << std::endl;
 	//
 	// Finally calculate and return the wander force
 	/*var wanderForce : Vector3D;

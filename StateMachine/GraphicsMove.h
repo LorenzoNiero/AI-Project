@@ -28,6 +28,8 @@ private:
 	sf::CircleShape minerCircle;
 	sf::CircleShape circleHome;
 	sf::CircleShape circleMine;
+	sf::CircleShape circleEnclosure;
+	sf::CircleShape circleLimitWolf;
 
 	sf::Texture texGnomo;
 	sf::Texture texCane;

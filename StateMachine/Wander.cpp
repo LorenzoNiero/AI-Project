@@ -17,9 +17,14 @@ void Wander::Enter(Wolf* wolf){
 
 void Wander::Execute(Wolf* wolf){
 	
-
-
-	//std::cout << "Update Cane execute " << std::endl;
+	float distance = wolf->getPosition().Distance( enclosureCenter);
+	if (distance > LimitDistanceWolf || distance < radiusEnclosure){
+		SMnamespace::Vector2 VecVel = wolf->getVelocity();
+		VecVel.x *= -1;
+		VecVel.y *= -1;
+		wolf->setVelocity(VecVel);
+	}
+	std::cout << distance << "Update Cane execute "  << std::endl;
 
 }
 

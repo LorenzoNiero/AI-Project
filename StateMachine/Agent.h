@@ -10,6 +10,10 @@ enum type : int
 	SHEEP
 };
 
+static SMnamespace::Vector2 enclosureCenter(300.0f, 350);
+static float radiusEnclosure = 100;
+static float LimitDistanceWolf = 200;
+
 class Agent 
 {
 

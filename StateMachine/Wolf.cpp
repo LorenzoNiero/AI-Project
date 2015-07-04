@@ -2,6 +2,7 @@
 
 Wolf::Wolf() {
 
+	m_vPosition = { 50, 150 };
 	//setPosition({ 0, 0 });
 	setPosition({ enclosureCenter.x + radiusEnclosure + 5, enclosureCenter.y   });
 	setVelocity({ 0.5f, 0.5f }); // non dovrebbe avere una base di velocità, dovrebbe essere 0

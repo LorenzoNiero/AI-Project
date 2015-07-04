@@ -6,6 +6,7 @@
 #include "Graphic.h"
 #include "GraphicsMove.h"
 #include "Wolf.h"
+#include "Sheep.h"
 
 using namespace SMnamespace;
 
@@ -29,5 +30,8 @@ private:
 	Miner bob;
 	Miner bob2;
 	Miner bob3;
+
+	Sheep sheep1;
+	Sheep sheep2;
 };
 

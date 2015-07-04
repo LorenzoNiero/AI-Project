@@ -9,10 +9,13 @@ MinerScene::MinerScene()
 	bob.setPosition(60.0f, 60.0f);
 	bob3.setPosition(40.0f, 50.0f);
 	
+	sheep1.setPosition(600, 150);
+
 	graMove.addActor(&bob);
 	graMove.addActor(&bob2);
 	graMove.addActor(&bob3);
 	graMove.addActor(&wolf1);
+	graMove.addActor(&sheep1);
 }
 
 MinerScene::~MinerScene()

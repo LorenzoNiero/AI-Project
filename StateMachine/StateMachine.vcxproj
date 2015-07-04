@@ -82,7 +82,9 @@
     <ClCompile Include="Miner.cpp" />
     <ClCompile Include="MinerStateMachine.cpp" />
     <ClCompile Include="Mining.cpp" />
+    <ClCompile Include="Pasture.cpp" />
     <ClCompile Include="Sheep.cpp" />
+    <ClCompile Include="SheepStateMachine.cpp" />
     <ClCompile Include="SteeringBehaviours.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Walk.cpp" />
@@ -98,7 +100,9 @@
     <ClInclude Include="Miner.h" />
     <ClInclude Include="MinerStateMachine.h" />
     <ClInclude Include="Mining.h" />
+    <ClInclude Include="Pasture.h" />
     <ClInclude Include="Sheep.h" />
+    <ClInclude Include="SheepStateMachine.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateMachine.h" />
     <ClInclude Include="SteeringBehaviors.h" />

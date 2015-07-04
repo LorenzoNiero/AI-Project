@@ -24,7 +24,7 @@ void Wander::Execute(Wolf* wolf){
 		VecVel.y *= -1;
 		wolf->setVelocity(VecVel);
 	}
-	std::cout << distance << "Update Cane execute "  << std::endl;
+	//std::cout << distance << "Update Dog execute "  << std::endl;
 
 }
 

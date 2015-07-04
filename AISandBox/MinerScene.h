@@ -33,5 +33,6 @@ private:
 
 	Sheep sheep1;
 	Sheep sheep2;
+	Sheep sheep3;
 };
 

@@ -15,3 +15,8 @@ void SheepStateMachine::ChangeState(State<Sheep>* pNewState)
 	m_pCurrentState = pNewState;
 	m_pCurrentState->Enter(m_pCurrentAgent);
 }
+
+//bool SheepStateMachine::setNeightBord(const std::vector<Agent*>& neighbors)
+//{
+//	
+//}

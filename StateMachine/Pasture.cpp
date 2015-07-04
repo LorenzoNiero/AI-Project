@@ -12,7 +12,7 @@ State<Sheep>& Pasture::getIInstance()
 
 void Pasture::Enter(Sheep* wolf){
 	std::cout << "Entering Pasture Sheep" << std::endl;
-	wolf->getSteeringBehavior()->WanderOn();
+	wolf->getSteeringBehavior()->CohesionOn();
 }
 
 void Pasture::Execute(Sheep* wolf){
@@ -30,7 +30,8 @@ void Pasture::Execute(Sheep* wolf){
 
 void Pasture::Exit(Sheep* wolf){
 	std::cout << "Exit Pasture Sheep" << std::endl;
-	wolf->getSteeringBehavior()->WanderOff();
-
+	wolf->getSteeringBehavior()->CohesionOff();
 }
+
+
 

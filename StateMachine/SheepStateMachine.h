@@ -29,6 +29,8 @@ public:
 
 	bool  isInState(const State<Sheep>& st) const { return true; };
 
+	//bool setNeightBord(const std::vector<Agent*>& neighbors);
+
 private:
 	State<Sheep>*   m_pCurrentState;
 	State<Sheep>*   m_pPreviousState;

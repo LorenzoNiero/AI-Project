@@ -19,6 +19,10 @@ void GraphicsMove::Initialize() {
 	{
 		// error...
 	}
+	if (!texBSheep.loadFromFile("../StateMachine/Sprites/black_sheep.png"))
+	{
+		// error...
+	}
 	if (!texMiniera.loadFromFile("../StateMachine/Sprites/miniera.png"))
 	{
 		// error...
@@ -44,6 +48,9 @@ void GraphicsMove::Initialize() {
 
 	sprSheep.setTexture(texSheep);
 	sprSheep.setScale(0.2, 0.2);
+
+	sprBSheep.setTexture(texBSheep);
+	sprBSheep.setScale(0.2, 0.2);
 
 	//circleEnclosure.setPosition(0, 0);
 	
@@ -90,8 +97,16 @@ void GraphicsMove::Draw() {
 		}
 		else if (tmp->GetAgentType() == SHEEP)
 		{
-			sprSheep.setPosition(tmpCircle->getPosition().x, tmpCircle->getPosition().y);
-			window.draw(sprSheep);
+			if (((Sheep*)tmp)->isHead())
+			{
+				sprBSheep.setPosition(tmpCircle->getPosition().x, tmpCircle->getPosition().y);
+				window.draw(sprBSheep);
+			}
+			else
+			{
+				sprSheep.setPosition(tmpCircle->getPosition().x, tmpCircle->getPosition().y);
+				window.draw(sprSheep);
+			}
 		}
 		else if (tmp->GetAgentType() == DOG)
 		{

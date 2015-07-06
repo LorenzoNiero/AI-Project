@@ -3,6 +3,7 @@
 #include <SFML\Graphics.hpp>
 #include <iostream>
 #include "Miner.h"
+#include "Sheep.h"
 #include "Agent.h"
 #include <vector>
 #include "Vector2.h"
@@ -33,13 +34,13 @@ private:
 
 	sf::Texture texGnomo;
 	sf::Texture texCane;
-	sf::Texture texSheep;
+	sf::Texture texSheep, texBSheep;
 	sf::Texture texMiniera;
 	sf::Texture texCasa;
 
 	sf::Sprite sprGnomo;
 	sf::Sprite sprCane;
-	sf::Sprite sprSheep;
+	sf::Sprite sprSheep, sprBSheep;
 	sf::Sprite sprMiniera;
 	sf::Sprite sprCasa;
 };

@@ -46,7 +46,6 @@ public:
 	SMnamespace::Vector2 getAcceleration() const { return m_vAcceleration; }
 	void setAcceleration(SMnamespace::Vector2 val) { m_vAcceleration = val; }
 
-	//void SetAgentType(int value){ m_eAgentType = value; };
 	int GetAgentType() const { return m_eAgentType; };
 
 protected:
@@ -57,6 +56,5 @@ protected:
 	float m_fCircleRadius;
 	float m_fAngleChange;
 	float m_fMaxVelocity;
-
 	type m_eAgentType;
 };

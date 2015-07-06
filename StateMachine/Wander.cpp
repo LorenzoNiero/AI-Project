@@ -13,18 +13,33 @@ State<Wolf>& Wander::getIInstance()
 void Wander::Enter(Wolf* wolf){
 	std::cout << "Entering Wander Wolf" << std::endl;
 	wolf->getSteeringBehavior()->WanderOn();
+
 }
 
 void Wander::Execute(Wolf* wolf){
 	
 	float distance = wolf->getPosition().Distance( enclosureCenter);
-	if (distance > LimitDistanceWolf || distance < radiusEnclosure){
-		SMnamespace::Vector2 VecVel = wolf->getVelocity();
-		VecVel.x *= -1;
-		VecVel.y *= -1;
-		wolf->setVelocity(VecVel);
+	
+	if (distance > radiusEnclosure && distance < LimitDistanceWolf){
+		wolf->getSteeringBehavior()->FleeOff();
+		wolf->getSteeringBehavior()->SeekOff();
+		wolf->getSteeringBehavior()->WanderOn();
+
 	}
-	//std::cout << distance << "Update Dog execute "  << std::endl;
+	else{
+		wolf->getSteeringBehavior()->WanderOff();
+		if (distance <= radiusEnclosure)
+		{
+			wolf->getSteeringBehavior()->SetTarget(enclosureCenter );
+			wolf->getSteeringBehavior()->FleeOn();
+
+		}
+		else{
+			wolf->getSteeringBehavior()->SetTarget(enclosureCenter);
+			wolf->getSteeringBehavior()->SeekOn();
+		}
+		
+	}
 
 }
 

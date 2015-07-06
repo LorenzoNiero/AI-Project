@@ -12,8 +12,6 @@ class Wolf : public Agent
 private:
 	WolfStateMachine* m_pWolfStateMachine;
 	SteeringBehaviors* m_pSteeringBehaviors;
-
-	//	SMnamespace::Vector2 m_wolfPos{ 50, 50 };
 	
 public:
 	Wolf();

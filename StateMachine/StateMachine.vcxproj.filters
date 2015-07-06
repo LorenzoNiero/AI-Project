@@ -28,9 +28,6 @@
     <ClCompile Include="GraphicsMove.cpp">
       <Filter>Cpp File</Filter>
     </ClCompile>
-    <ClCompile Include="main_todo_delete.cpp">
-      <Filter>Cpp File</Filter>
-    </ClCompile>
     <ClCompile Include="Sheep.cpp">
       <Filter>Cpp File</Filter>
     </ClCompile>

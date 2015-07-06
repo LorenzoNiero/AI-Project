@@ -78,7 +78,6 @@
     <ClCompile Include="Graphic.cpp" />
     <ClCompile Include="GraphicsMove.cpp" />
     <ClCompile Include="Idle.cpp" />
-    <ClCompile Include="main_todo_delete.cpp" />
     <ClCompile Include="Miner.cpp" />
     <ClCompile Include="MinerStateMachine.cpp" />
     <ClCompile Include="Mining.cpp" />

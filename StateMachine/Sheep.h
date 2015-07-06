@@ -3,6 +3,7 @@
 #include "SteeringBehaviors.h"
 #include "SheepStateMachine.h"
 #include "Pasture.h"
+#include "Wolf.h"
 
 
 class SheepStateMachine;
@@ -25,7 +26,7 @@ public:
 		m_pSteeringBehaviors->SetNeighbors(nNeighbors);
 	}
 	void setIsHead(bool value = true){
-		
+
 		if (value){
 			m_pSteeringBehaviors->WanderOn();
 		}
@@ -35,8 +36,7 @@ public:
 
 		Head = value;
 	}
+
+	bool isHead() const{ return Head; }
 	
-	bool isHead() const{
-		return Head;
-	}
 };

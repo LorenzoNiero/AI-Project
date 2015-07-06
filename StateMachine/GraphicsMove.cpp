@@ -5,82 +5,84 @@ void GraphicsMove::Initialize() {
 	m_VectorAgent = new std::vector<Agent*>();
 	m_VectorCircle = new std::vector<sf::CircleShape *>();
 
-	window.create(sf::VideoMode(800, 600), "FSM Miner at Work!");
+	m_window.create(sf::VideoMode(800, 600), "FSM Miner at Work!");
 
-	if (!texGnomo.loadFromFile("../StateMachine/Sprites/gnomo.png"))
+	if (!m_texGnomo.loadFromFile("../StateMachine/Sprites/gnomo.png"))
 	{
 		// error...
 	}
-	if (!texCane.loadFromFile("../StateMachine/Sprites/cane.png"))
+	if (!m_texCane.loadFromFile("../StateMachine/Sprites/cane.png"))
 	{
 		// error...
 	}
-	if (!texSheep.loadFromFile("../StateMachine/Sprites/sheep.png"))
+	if (!m_texSheep.loadFromFile("../StateMachine/Sprites/sheep.png"))
 	{
 		// error...
 	}
-	if (!texBSheep.loadFromFile("../StateMachine/Sprites/black_sheep.png"))
+	if (!m_texBSheep.loadFromFile("../StateMachine/Sprites/black_sheep.png"))
 	{
 		// error...
 	}
-	if (!texMiniera.loadFromFile("../StateMachine/Sprites/miniera.png"))
+	if (!m_texMiniera.loadFromFile("../StateMachine/Sprites/miniera.png"))
 	{
 		// error...
 	}
-	if (!texCasa.loadFromFile("../StateMachine/Sprites/casa.png"))
+	if (!m_texCasa.loadFromFile("../StateMachine/Sprites/casa.png"))
 	{
 		// error...
 	}	
 	
-	sprCasa.setTexture(texCasa);
-	sprCasa.setPosition((positionHome.x-10), (positionHome.y-50));
-	sprCasa.setScale(0.4,0.4);
+	m_sprCasa.setTexture(m_texCasa);
+	m_sprCasa.setPosition((positionHome.x-10), (positionHome.y-50));
+	m_sprCasa.setScale(0.4,0.4);
 
-	sprMiniera.setTexture(texMiniera);
-	sprMiniera.setPosition((positionMine.x-50), (positionMine.y-50));
-	sprMiniera.setScale(0.4, 0.4);
+	m_sprMiniera.setTexture(m_texMiniera);
+	m_sprMiniera.setPosition((positionMine.x-50), (positionMine.y-50));
+	m_sprMiniera.setScale(0.4, 0.4);
 
-	sprGnomo.setTexture(texGnomo);
-	sprGnomo.setScale(0.3, 0.3);
+	m_sprGnomo.setTexture(m_texGnomo);
+	m_sprGnomo.setScale(0.3, 0.3);
 
-	sprCane.setTexture(texCane);
-	sprCane.setScale(0.1, 0.1);
+	m_sprCane.setTexture(m_texCane);
+	m_sprCane.setScale(0.1, 0.1);
 
-	sprSheep.setTexture(texSheep);
-	sprSheep.setScale(0.2, 0.2);
+	m_sprSheep.setTexture(m_texSheep);
+	m_sprSheep.setScale(0.2, 0.2);
 
-	sprBSheep.setTexture(texBSheep);
-	sprBSheep.setScale(0.2, 0.2);
+	m_sprBSheep.setTexture(m_texBSheep);
+	m_sprBSheep.setScale(0.2, 0.2);
 
 	//circleEnclosure.setPosition(0, 0);
 	
-	circleEnclosure.setRadius(radiusEnclosure);
-	circleEnclosure.setOrigin(radiusEnclosure, radiusEnclosure);
-	circleEnclosure.setFillColor(color.Blue);
+	m_circleEnclosure.setRadius(radiusEnclosure);
+	m_circleEnclosure.setOrigin(radiusEnclosure, radiusEnclosure);
+	m_circleEnclosure.setFillColor(color.Black);
+	m_circleEnclosure.setOutlineColor({139,69,19});
+	m_circleEnclosure.setOutlineThickness(10);
 	//circleEnclosure.setPosition(0, 0);
-	circleEnclosure.setPosition(enclosureCenter.x , enclosureCenter.y);
+	m_circleEnclosure.setPosition(enclosureCenter.x , enclosureCenter.y);
 
-	circleLimitWolf.setRadius(LimitDistanceWolf);
-	circleLimitWolf.setOrigin(LimitDistanceWolf, LimitDistanceWolf);
-	circleLimitWolf.setFillColor(color.Cyan);
-	//circleLimitWolf.setPosition(0,0);
-	circleLimitWolf.setPosition(enclosureCenter.x , enclosureCenter.y  );
+	//circleLimitWolf.setRadius(LimitDistanceWolf);
+	//circleLimitWolf.setOrigin(LimitDistanceWolf, LimitDistanceWolf);
+	//circleLimitWolf.setFillColor(color.Cyan);
+	////circleLimitWolf.setPosition(0,0);
+	//circleLimitWolf.setPosition(enclosureCenter.x , enclosureCenter.y  );
 }
 
 void GraphicsMove::Draw() {
 
 	sf::Event event;
-	while (window.pollEvent(event))
+	while (m_window.pollEvent(event))
 	{
 		if (event.type == sf::Event::Closed)
-			window.close();
+			m_window.close();
 	}
 
-	window.clear();
-	window.draw(sprCasa);
-	window.draw(sprMiniera);
-	window.draw(circleLimitWolf);
-	window.draw(circleEnclosure);
+	m_window.clear();
+	m_window.draw(m_sprCasa);
+	m_window.draw(m_sprMiniera);
+	//window.draw(circleLimitWolf);
+	m_window.draw(m_circleEnclosure);
 	
 
 	for (int i = 0; i < m_VectorCircle->size(); i++)
@@ -92,30 +94,30 @@ void GraphicsMove::Draw() {
 
 		if (tmp->GetAgentType() == GNOME)
 		{
-			sprGnomo.setPosition(tmpCircle->getPosition().x, tmpCircle->getPosition().y);
-			window.draw(sprGnomo);
+			m_sprGnomo.setPosition(tmpCircle->getPosition().x, tmpCircle->getPosition().y);
+			m_window.draw(m_sprGnomo);
 		}
 		else if (tmp->GetAgentType() == SHEEP)
 		{
 			if (((Sheep*)tmp)->isHead())
 			{
-				sprBSheep.setPosition(tmpCircle->getPosition().x, tmpCircle->getPosition().y);
-				window.draw(sprBSheep);
+				m_sprBSheep.setPosition(tmpCircle->getPosition().x, tmpCircle->getPosition().y);
+				m_window.draw(m_sprBSheep);
 			}
 			else
 			{
-				sprSheep.setPosition(tmpCircle->getPosition().x, tmpCircle->getPosition().y);
-				window.draw(sprSheep);
+				m_sprSheep.setPosition(tmpCircle->getPosition().x, tmpCircle->getPosition().y);
+				m_window.draw(m_sprSheep);
 			}
 		}
 		else if (tmp->GetAgentType() == DOG)
 		{
-			sprCane.setPosition(tmpCircle->getPosition().x, tmpCircle->getPosition().y);
-			window.draw(sprCane);
+			m_sprCane.setPosition(tmpCircle->getPosition().x, tmpCircle->getPosition().y);
+			m_window.draw(m_sprCane);
 		}
 	}
 
-	window.display();
+	m_window.display();
 }
 
 void GraphicsMove::addActor(Agent *agent)

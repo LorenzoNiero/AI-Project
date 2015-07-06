@@ -127,51 +127,20 @@ SMnamespace::Vector2 SteeringBehaviors::Wander()
 	//
 	// Calculate the displacement force
 	SMnamespace::Vector2 displacement = { 0, -1 };
-	//displacement = new Vector3D(0, -1);
-	//displacement.scaleBy(CIRCLE_RADIUS);
-	//
+	
 	// Randomly change the vector direction
 	// by making it change its current angle
 	setAngle(displacement, wanderAngle);
-	//
+
 	// Change wanderAngle just a bit, so it
 	// won't have the same value in the
 	// next game frame.
 	wanderAngle += rand() * m_agent->getAngleChange() - m_agent->getAngleChange() * 0.5f;
-	//std::cout << "" << wanderAngle << std::endl;
-	//
-	// Finally calculate and return the wander force
-	/*var wanderForce : Vector3D;
-	wanderForce = circleCenter.add(displacement);
-	return wanderForce;*/
+	
 	wanderForce = circleCenter + displacement;
 
 	return wanderForce;
-	
-	
-	//SMnamespace::Vector2 circleCenter, desiredVelocity, wanderForce;
-	//SMnamespace::Vector2 displacement = { 0, -1 };
-	//static float wanderAngle =0;
-
-	//circleCenter = m_agent->getVelocity();
-	//
-	//desiredVelocity = circleCenter.NormalizeCopy() *m_agent->getCircleDistance();
-	//
-	//desiredVelocity = displacement.NormalizeCopy() * m_agent->getCircleRadius();
-	//std::cout << "" << desiredVelocity.x << "  " << desiredVelocity.y << std::endl;
-	////set angle, randomly change the vector direction by making it change its current angle
-	////SMnamespace::Vector2 pos = displacement;
-	////pos.x = cos(wanderAngle) * displacement.Length();
-	////pos.y = sin(wanderAngle) * displacement.Length();
-	//////m_agent->setPosition(pos);
-	////displacement = pos;
-	//setAngle(displacement, wanderAngle);
-	//
-	//wanderAngle += rand() * m_agent->getAngleChange() - m_agent->getAngleChange() * 0.5f;
-
-	//wanderForce = circleCenter + displacement;
-	//
-	//return wanderForce;
+		
 }
 
 
@@ -249,7 +218,7 @@ SMnamespace::Vector2 SteeringBehaviors::Cohesion(const std::vector<Agent*>& neig
 	{
 		vDist = m_agent->getPosition() - neighbors.at(i)->getPosition();
 		fDist = vDist.Length();
-		if ((fDist > 30) && (fDist < fNeighbordist))
+		if ((fDist > distanceFromAnotherAgent) && (fDist < fNeighbordist))
 		{
 			vResult += neighbors.at(i)->getPosition();
 			++iCount;
@@ -278,7 +247,7 @@ SMnamespace::Vector2 SteeringBehaviors::Alignment(const std::vector<Agent*>& nei
 	{
 		vDist = m_agent->getPosition() - neighbors.at(i)->getPosition();
 		fDist = vDist.Length();
-		if ((fDist > 30) && (fDist < fNeighbordist)) 
+		if ((fDist > distanceFromAnotherAgent) && (fDist < fNeighbordist))
 		{
 			vResult += neighbors.at(i)->getVelocity();
 			++iCount;
@@ -294,21 +263,5 @@ SMnamespace::Vector2 SteeringBehaviors::Alignment(const std::vector<Agent*>& nei
 		return vSteer;
 	}
 	
-	return SMnamespace::Vector2::ZERO;
-}
-
-SMnamespace::Vector2 SteeringBehaviors::StayWithinWalls()
-{
-
-	//sposta if nel metodo che invoca per evitare chiamate se non serve
-	if (m_agent->getPosition().x > 25) 
-	{
-		SMnamespace::Vector2 vDesired = { m_agent->getMaxVelocity(), m_agent->getVelocity().y };
-		SMnamespace::Vector2 vSteer = SMnamespace::Vector2{ vDesired - m_agent->getVelocity() };
-		vSteer.Truncate(m_agent->getMaxVelocity());
-		return vSteer;
-	}
-
-	//da togliere una volta rimosso l'if
 	return SMnamespace::Vector2::ZERO;
 }

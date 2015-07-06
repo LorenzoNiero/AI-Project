@@ -26,7 +26,6 @@ public:
 	void SetObstacles(std::vector<Place*> nObstacles) { m_obstacles = nObstacles; }
 
 	SMnamespace::Vector2 GetForce()const { return m_steering; }
-	SMnamespace::Vector2 StayWithinWalls();
 
 	void Calculate();
 
@@ -34,14 +33,8 @@ public:
 	inline void ArriveOn()				{ m_iFlags |= arrive; }
 
 	inline void FleeOn()				{ m_iFlags |= flee; }
-	
-	//insegui qualcuno
 	inline void PursuitOn()				{ m_iFlags |= pursuit; }
-
-	//fuga
 	inline void EvadeOn()				{ m_iFlags |= evade; }
-
-	//girare a caso
 	inline void WanderOn()				{ m_iFlags |= wander; }
 
 	//TO DO: not implement
@@ -49,7 +42,6 @@ public:
 	inline void WallAvoidanceOn()		{ m_iFlags |= wallAvoidance; }
 	inline void InterposeOn()			{ m_iFlags |= interpose; }
 	
-	//per le pecore
 	inline void SeparationOn()			{ m_iFlags |= separation; }
 	inline void CohesionOn()			{ m_iFlags |= cohesion; }
 	inline void AlignmentOn()			{ m_iFlags |= alignment; }
@@ -90,7 +82,9 @@ private:
 
 	SMnamespace::Vector2	m_steering;
 	SMnamespace::Vector2	m_target;
-	
+
+	const float distanceFromAnotherAgent = 35;
+
 	float			m_thetaValue;
 
 	int				m_iFlags;

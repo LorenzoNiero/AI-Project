@@ -22,19 +22,21 @@ public:
 	virtual void OnDraw(sf::RenderWindow& renderWindow);
 
 private:
-	Graphic gra;
-	GraphicsMove graMove;
+	Graphic m_GraphMiner;
+	GraphicsMove m_Graphics;
 	
-	Wolf wolf1;
+	Wolf m_Wolf;
 
-	Miner bob;
-	Miner bob2;
-	Miner bob3;
+	Miner m_Miner1;
+	Miner m_Miner2;
+	Miner m_Miner3;
 
-	std::vector<Agent*> nNeighbors;
+	std::vector<Agent*> m_NeighborsSheep;
 
 	Sheep sheep1;
 	Sheep sheep2;
 	Sheep sheep3;
+	Sheep sheep4;
+	Sheep sheep5;
 };
 

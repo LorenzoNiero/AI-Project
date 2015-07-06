@@ -25,7 +25,6 @@
     <ClInclude Include="Node.h" />
     <ClInclude Include="NodeState.h" />
     <ClInclude Include="SceneEnum.h" />
-    <ClInclude Include="SteeringBehaviors.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Vector2.h" />
   </ItemGroup>

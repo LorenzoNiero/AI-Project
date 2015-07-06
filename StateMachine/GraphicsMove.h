@@ -20,27 +20,27 @@ public:
 
 	void UpdateAgent();
 private:
-	sf::Font font;
+	sf::Font m_font;
 	std::vector<Agent*> *m_VectorAgent;
 	std::vector<sf::CircleShape *> *m_VectorCircle;
 	sf::Color color;
-	sf::RenderWindow window;
+	sf::RenderWindow m_window;
 
-	sf::CircleShape minerCircle;
-	sf::CircleShape circleHome;
-	sf::CircleShape circleMine;
-	sf::CircleShape circleEnclosure;
-	sf::CircleShape circleLimitWolf;
+	sf::CircleShape m_minerCircle;
+	sf::CircleShape m_circleHome;
+	sf::CircleShape m_circleMine;
+	sf::CircleShape m_circleEnclosure;
+	sf::CircleShape m_circleLimitWolf;
 
-	sf::Texture texGnomo;
-	sf::Texture texCane;
-	sf::Texture texSheep, texBSheep;
-	sf::Texture texMiniera;
-	sf::Texture texCasa;
+	sf::Texture m_texGnomo;
+	sf::Texture m_texCane;
+	sf::Texture m_texSheep, m_texBSheep;
+	sf::Texture m_texMiniera;
+	sf::Texture m_texCasa;
 
-	sf::Sprite sprGnomo;
-	sf::Sprite sprCane;
-	sf::Sprite sprSheep, sprBSheep;
-	sf::Sprite sprMiniera;
-	sf::Sprite sprCasa;
+	sf::Sprite m_sprGnomo;
+	sf::Sprite m_sprCane;
+	sf::Sprite m_sprSheep, m_sprBSheep;
+	sf::Sprite m_sprMiniera;
+	sf::Sprite m_sprCasa;
 };

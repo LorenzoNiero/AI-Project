@@ -23,14 +23,17 @@ void Pasture::Enter(Sheep* sheep){
 void Pasture::Execute(Sheep* sheep){
 
 	float distance = sheep->getPosition().Distance(enclosureCenter);
-	if (distance > LimitDistanceWolf || distance < radiusEnclosure){
-		SMnamespace::Vector2 VecVel = sheep->getVelocity();
-		VecVel.x *= -1;
-		VecVel.y *= -1;
-		sheep->setVelocity(VecVel);
-	}
-	//std::cout << distance << "Update Cane execute " << std::endl;
+	if (distance > radiusEnclosure){
+		
+		sheep->getSteeringBehavior()->SetTarget(enclosureCenter);
+		sheep->getSteeringBehavior()->SeekOn();
 
+		std::cout << distance << " sheep escape " << std::endl;
+
+	}
+	else{
+		sheep->getSteeringBehavior()->SeekOff();
+	}
 }
 
 void Pasture::Exit(Sheep* sheep){

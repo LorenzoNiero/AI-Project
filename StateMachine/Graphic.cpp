@@ -2,7 +2,7 @@
 
 void Graphic::Initialize() {
 	
-	if (!font.loadFromFile("Fonts/arial.ttf"))
+	if (!font.loadFromFile("../StateMachine/Fonts/arial.ttf"))
 	{
 		std::cout << "ERROR: Font Not Found!";
 	}

@@ -40,10 +40,10 @@ void GraphicsMove::Initialize() {
 	sprGnomo.setScale(0.3, 0.3);
 
 	sprCane.setTexture(texCane);
-	sprCane.setScale(0.2, 0.2);
+	sprCane.setScale(0.1, 0.1);
 
 	sprSheep.setTexture(texSheep);
-	sprSheep.setScale(0.4, 0.4);
+	sprSheep.setScale(0.2, 0.2);
 
 	//circleEnclosure.setPosition(0, 0);
 	

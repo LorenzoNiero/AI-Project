@@ -31,6 +31,8 @@ private:
 	Miner bob2;
 	Miner bob3;
 
+	std::vector<Agent*> nNeighbors;
+
 	Sheep sheep1;
 	Sheep sheep2;
 	Sheep sheep3;

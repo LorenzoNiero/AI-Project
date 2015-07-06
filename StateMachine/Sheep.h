@@ -12,8 +12,7 @@ class Sheep : public Agent
 private:
 	SheepStateMachine* m_pSheepStateMachine;
 	SteeringBehaviors* m_pSteeringBehaviors;
-
-	//	SMnamespace::Vector2 m_wolfPos{ 50, 50 };
+	bool Head;
 
 public:
 	Sheep();
@@ -22,5 +21,22 @@ public:
 	virtual void Update() override;
 	SheepStateMachine* getStateMachine() { return m_pSheepStateMachine; };
 	SteeringBehaviors* getSteeringBehavior() { return m_pSteeringBehaviors; };
+	void SetNeighbors(std::vector<Agent*> nNeighbors){
+		m_pSteeringBehaviors->SetNeighbors(nNeighbors);
+	}
+	void setIsHead(bool value = true){
+		
+		if (value){
+			m_pSteeringBehaviors->WanderOn();
+		}
+		else{
+			m_pSteeringBehaviors->WanderOff();
+		}
 
+		Head = value;
+	}
+	
+	bool isHead() const{
+		return Head;
+	}
 };

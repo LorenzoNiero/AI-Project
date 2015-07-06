@@ -26,7 +26,13 @@ void SteeringBehaviors::SumForces()
 	if (EvadeIsOn()) 
 		m_steering += Evade(m_evader);
 	if (WanderIsOn()) 
-		m_steering += Wander();
+		m_steering += Wander();	
+	if (CohesionIsOn())
+		m_steering += Cohesion(m_neighbors);
+	if (SeparationIsOn())
+		m_steering += Separation(m_neighbors);
+	if (AlignmentIsOn())
+		m_steering += Alignment(m_neighbors);
 }
 
 
@@ -243,7 +249,7 @@ SMnamespace::Vector2 SteeringBehaviors::Cohesion(const std::vector<Agent*>& neig
 	{
 		vDist = m_agent->getPosition() - neighbors.at(i)->getPosition();
 		fDist = vDist.Length();
-		if ((fDist > 0) && (fDist < fNeighbordist))
+		if ((fDist > 10) && (fDist < fNeighbordist))
 		{
 			vResult += neighbors.at(i)->getPosition();
 			++iCount;
@@ -272,7 +278,7 @@ SMnamespace::Vector2 SteeringBehaviors::Alignment(const std::vector<Agent*>& nei
 	{
 		vDist = m_agent->getPosition() - neighbors.at(i)->getPosition();
 		fDist = vDist.Length();
-		if ((fDist > 0) && (fDist < fNeighbordist)) 
+		if ((fDist > 10) && (fDist < fNeighbordist)) 
 		{
 			vResult += neighbors.at(i)->getVelocity();
 			++iCount;

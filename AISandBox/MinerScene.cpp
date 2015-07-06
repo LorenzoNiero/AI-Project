@@ -10,8 +10,18 @@ MinerScene::MinerScene()
 	bob3.setPosition(40.0f, 50.0f);
 	
 	sheep1.setPosition(enclosureCenter.x, enclosureCenter.y);
-	sheep2.setPosition(enclosureCenter.x + 5, enclosureCenter.y);
-	sheep3.setPosition(enclosureCenter.x + 5, enclosureCenter.y+5);
+	sheep2.setPosition(enclosureCenter.x +30, enclosureCenter.y);
+	sheep3.setPosition(enclosureCenter.x + 20, enclosureCenter.y+30);
+
+	sheep1.setIsHead(true);
+	
+	nNeighbors.push_back(&sheep1);
+	nNeighbors.push_back(&sheep2);
+	nNeighbors.push_back(&sheep3);
+
+	sheep1.SetNeighbors(nNeighbors);
+	sheep2.SetNeighbors(nNeighbors);
+	sheep3.SetNeighbors(nNeighbors);
 
 	graMove.addActor(&bob);
 	graMove.addActor(&bob2);

@@ -10,27 +10,34 @@ State<Sheep>& Pasture::getIInstance()
 	return *m_pIInstance;
 };
 
-void Pasture::Enter(Sheep* wolf){
+void Pasture::Enter(Sheep* sheep){
 	std::cout << "Entering Pasture Sheep" << std::endl;
-	wolf->getSteeringBehavior()->CohesionOn();
+	
+	if (sheep->isHead() == false){
+		sheep->getSteeringBehavior()->AlignmentOn();
+		sheep->getSteeringBehavior()->CohesionOn();
+		sheep->getSteeringBehavior()->SeparationOn();
+	}
 }
 
-void Pasture::Execute(Sheep* wolf){
+void Pasture::Execute(Sheep* sheep){
 
-	/*float distance = wolf->getPosition().Distance(enclosureCenter);
+	float distance = sheep->getPosition().Distance(enclosureCenter);
 	if (distance > LimitDistanceWolf || distance < radiusEnclosure){
-		SMnamespace::Vector2 VecVel = wolf->getVelocity();
+		SMnamespace::Vector2 VecVel = sheep->getVelocity();
 		VecVel.x *= -1;
 		VecVel.y *= -1;
-		wolf->setVelocity(VecVel);
+		sheep->setVelocity(VecVel);
 	}
-	std::cout << distance << "Update Cane execute " << std::endl;*/
+	//std::cout << distance << "Update Cane execute " << std::endl;
 
 }
 
-void Pasture::Exit(Sheep* wolf){
+void Pasture::Exit(Sheep* sheep){
 	std::cout << "Exit Pasture Sheep" << std::endl;
-	wolf->getSteeringBehavior()->CohesionOff();
+	sheep->getSteeringBehavior()->AlignmentOff();
+	sheep->getSteeringBehavior()->CohesionOff();
+	sheep->getSteeringBehavior()->SeparationOff();
 }
 
 

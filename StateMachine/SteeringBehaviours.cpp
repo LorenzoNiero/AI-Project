@@ -249,7 +249,7 @@ SMnamespace::Vector2 SteeringBehaviors::Cohesion(const std::vector<Agent*>& neig
 	{
 		vDist = m_agent->getPosition() - neighbors.at(i)->getPosition();
 		fDist = vDist.Length();
-		if ((fDist > 10) && (fDist < fNeighbordist))
+		if ((fDist > 30) && (fDist < fNeighbordist))
 		{
 			vResult += neighbors.at(i)->getPosition();
 			++iCount;
@@ -278,7 +278,7 @@ SMnamespace::Vector2 SteeringBehaviors::Alignment(const std::vector<Agent*>& nei
 	{
 		vDist = m_agent->getPosition() - neighbors.at(i)->getPosition();
 		fDist = vDist.Length();
-		if ((fDist > 10) && (fDist < fNeighbordist)) 
+		if ((fDist > 30) && (fDist < fNeighbordist)) 
 		{
 			vResult += neighbors.at(i)->getVelocity();
 			++iCount;

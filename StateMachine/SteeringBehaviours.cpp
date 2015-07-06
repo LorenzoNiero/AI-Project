@@ -27,6 +27,13 @@ void SteeringBehaviors::SumForces()
 		m_steering += Evade(m_evader);
 	if (WanderIsOn()) 
 		m_steering += Wander();
+	
+	if (CohesionIsOn())
+		m_steering += Cohesion(m_neighbors);
+	if (SeparationIsOn())
+		m_steering += Separation(m_neighbors);
+	if (AlignmentIsOn())
+		m_steering += Alignment(m_neighbors);
 }
 
 

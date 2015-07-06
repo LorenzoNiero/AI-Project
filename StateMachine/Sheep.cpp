@@ -2,7 +2,7 @@
 
 
 Sheep::Sheep() {
-
+		
 	m_eAgentType = SHEEP;
 		
 	
@@ -23,6 +23,8 @@ Sheep::Sheep() {
 
 
 	m_pSheepStateMachine->ChangeState(m_pStartState);
+
+	setIsHead(false);
 }
 
 Sheep::~Sheep()

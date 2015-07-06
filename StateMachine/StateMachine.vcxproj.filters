@@ -43,6 +43,12 @@
     <ClCompile Include="Wander.cpp">
       <Filter>Cpp File</Filter>
     </ClCompile>
+    <ClCompile Include="SheepStateMachine.cpp">
+      <Filter>Cpp File</Filter>
+    </ClCompile>
+    <ClCompile Include="Pasture.cpp">
+      <Filter>Cpp File</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h">
@@ -61,9 +67,6 @@
       <Filter>Header File</Filter>
     </ClInclude>
     <ClInclude Include="GraphicsMove.h">
-      <Filter>Header File</Filter>
-    </ClInclude>
-    <ClInclude Include="Sheep.h">
       <Filter>Header File</Filter>
     </ClInclude>
     <ClInclude Include="MinerStateMachine.h">
@@ -93,6 +96,15 @@
     <ClInclude Include="Wander.h">
       <Filter>Header File\State</Filter>
     </ClInclude>
+    <ClInclude Include="Sheep.h">
+      <Filter>Header File\Sheep</Filter>
+    </ClInclude>
+    <ClInclude Include="SheepStateMachine.h">
+      <Filter>Header File\Sheep</Filter>
+    </ClInclude>
+    <ClInclude Include="Pasture.h">
+      <Filter>Header File\State</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Fonts">
@@ -112,6 +124,9 @@
     </Filter>
     <Filter Include="Header File\Wolf">
       <UniqueIdentifier>{7fe6f183-4fb2-4b6e-bad0-5a08f3c183b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header File\Sheep">
+      <UniqueIdentifier>{2745afe5-ff88-4eb0-94e2-fcaa8c08b242}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

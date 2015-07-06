@@ -10,13 +10,11 @@ MinerScene::MinerScene()
 	bob3.setPosition(40.0f, 50.0f);
 	
 	sheep1.setPosition(enclosureCenter.x, enclosureCenter.y);
-	sheep2.setPosition(enclosureCenter.x +10, enclosureCenter.y);
-	sheep3.setPosition(enclosureCenter.x + 10, enclosureCenter.y+10);
+	sheep2.setPosition(enclosureCenter.x +30, enclosureCenter.y);
+	sheep3.setPosition(enclosureCenter.x + 20, enclosureCenter.y+30);
 
 	sheep1.setIsHead(true);
-	sheep2.setIsHead(true);
-	sheep3.setIsHead(true);
-
+	
 	nNeighbors.push_back(&sheep1);
 	nNeighbors.push_back(&sheep2);
 	nNeighbors.push_back(&sheep3);

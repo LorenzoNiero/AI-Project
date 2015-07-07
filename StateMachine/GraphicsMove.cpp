@@ -52,7 +52,6 @@ void GraphicsMove::Initialize() {
 	m_sprBSheep.setTexture(m_texBSheep);
 	m_sprBSheep.setScale(0.2, 0.2);
 
-	//circleEnclosure.setPosition(0, 0);
 	
 	m_circleEnclosure.setRadius(radiusEnclosure);
 	m_circleEnclosure.setOrigin(radiusEnclosure, radiusEnclosure);

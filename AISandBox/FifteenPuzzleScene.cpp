@@ -1,4 +1,5 @@
 #include "FifteenPuzzleScene.h"
+#include "Application.h"
 
 FifteenPuzzleScene::FifteenPuzzleScene()
 {
@@ -14,11 +15,14 @@ FifteenPuzzleScene::~FifteenPuzzleScene()
 
 void FifteenPuzzleScene::OnIdle()
 {
-	algorithm.Run(result);
-	graphic.Draw(result);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){
+		Application::Istance()->SetScene(SceneEnum::Scene_MainMenu);
+		
+	}
 }
 
 void FifteenPuzzleScene::OnDraw(sf::RenderWindow& renderWindow)
 {
-    
+	algorithm.Run(result);
+	graphic.Draw(result);
 }

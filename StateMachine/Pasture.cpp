@@ -27,9 +27,7 @@ void Pasture::Execute(Sheep* sheep){
 		
 		sheep->getSteeringBehavior()->SetTarget(enclosureCenter);
 		sheep->getSteeringBehavior()->SeekOn();
-
-		std::cout << distance << " sheep escape " << std::endl;
-
+		
 	}
 	else{
 		sheep->getSteeringBehavior()->SeekOff();

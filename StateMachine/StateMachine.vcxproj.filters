@@ -1,50 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Graphic.cpp">
-      <Filter>Cpp File</Filter>
-    </ClCompile>
-    <ClCompile Include="Idle.cpp">
-      <Filter>Cpp File</Filter>
-    </ClCompile>
     <ClCompile Include="Miner.cpp">
-      <Filter>Cpp File</Filter>
+      <Filter>Cpp File\Miner</Filter>
     </ClCompile>
     <ClCompile Include="MinerStateMachine.cpp">
-      <Filter>Cpp File</Filter>
-    </ClCompile>
-    <ClCompile Include="Mining.cpp">
-      <Filter>Cpp File</Filter>
-    </ClCompile>
-    <ClCompile Include="Walk.cpp">
-      <Filter>Cpp File</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector2.cpp">
-      <Filter>Cpp File</Filter>
-    </ClCompile>
-    <ClCompile Include="SteeringBehaviours.cpp">
-      <Filter>Cpp File</Filter>
-    </ClCompile>
-    <ClCompile Include="GraphicsMove.cpp">
-      <Filter>Cpp File</Filter>
+      <Filter>Cpp File\Miner</Filter>
     </ClCompile>
     <ClCompile Include="Sheep.cpp">
-      <Filter>Cpp File</Filter>
-    </ClCompile>
-    <ClCompile Include="Wolf.cpp">
-      <Filter>Cpp File</Filter>
-    </ClCompile>
-    <ClCompile Include="WolfStateMachine.cpp">
-      <Filter>Cpp File</Filter>
-    </ClCompile>
-    <ClCompile Include="Wander.cpp">
-      <Filter>Cpp File</Filter>
+      <Filter>Cpp File\Sheep</Filter>
     </ClCompile>
     <ClCompile Include="SheepStateMachine.cpp">
-      <Filter>Cpp File</Filter>
+      <Filter>Cpp File\Sheep</Filter>
+    </ClCompile>
+    <ClCompile Include="Wolf.cpp">
+      <Filter>Cpp File\Wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="WolfStateMachine.cpp">
+      <Filter>Cpp File\Wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="Idle.cpp">
+      <Filter>Cpp File\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Mining.cpp">
+      <Filter>Cpp File\State</Filter>
     </ClCompile>
     <ClCompile Include="Pasture.cpp">
-      <Filter>Cpp File</Filter>
+      <Filter>Cpp File\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Walk.cpp">
+      <Filter>Cpp File\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Wander.cpp">
+      <Filter>Cpp File\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic.cpp">
+      <Filter>Cpp File\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsMove.cpp">
+      <Filter>Cpp File\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="SteeringBehaviours.cpp">
+      <Filter>Cpp File\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Cpp File\Other</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +124,21 @@
     </Filter>
     <Filter Include="Header File\Sheep">
       <UniqueIdentifier>{2745afe5-ff88-4eb0-94e2-fcaa8c08b242}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Cpp File\Miner">
+      <UniqueIdentifier>{76b33c89-7dfb-4bff-a010-216dd72628db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Cpp File\Sheep">
+      <UniqueIdentifier>{504d411b-31f1-42a7-aa46-d2701a1eebf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Cpp File\Wolf">
+      <UniqueIdentifier>{f95584a2-3ac1-460c-8386-40dee65a5d69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Cpp File\State">
+      <UniqueIdentifier>{5025639b-cedc-47c3-aa7d-877d40515036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Cpp File\Other">
+      <UniqueIdentifier>{e4c60d00-b33d-4045-a3b3-579124fb49e7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

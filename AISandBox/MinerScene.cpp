@@ -1,4 +1,5 @@
 #include "MinerScene.h"
+#include "Application.h"
 
 
 MinerScene::MinerScene()
@@ -48,6 +49,10 @@ MinerScene::~MinerScene()
 
 void MinerScene::OnIdle()
 {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){
+		Application::Istance()->SetScene(SceneEnum::Scene_MainMenu);
+		//alg.Finish();
+	}
 }
 
 void MinerScene::OnDraw(sf::RenderWindow& renderWindow)

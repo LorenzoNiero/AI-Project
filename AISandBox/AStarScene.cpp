@@ -52,7 +52,7 @@ usere per intercettare eevnti tastiera o mouse ecc
 void AStarScene::OnIdle()
 {	
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){
-		//Application::Istance()->SetScene(SceneEnum::Scene_MainMenu);
+		Application::Istance()->SetScene(SceneEnum::Scene_MainMenu);
 		//alg.Finish();
 	}
 }
